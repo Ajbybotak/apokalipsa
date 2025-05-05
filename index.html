@@ -171,7 +171,7 @@
       text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;
       color: white;
       position: relative;
-      top: -15px;
+      top: -20px;
     }
 
     .black { color: black; }
@@ -310,21 +310,21 @@
     </div>
     <div class="counter">
       <span class="green">Głód</span>
-      <button class="btn glod-minus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('glod', -1, 0, 10)">-</button>
+      <button class="btn glod-minus" onclick="updateValue('glod', -1, 0, 10)"><span class="plus-text">-</span></button>
       <div id="glod" class="value green">10</div>
-      <button class="btn glod-plus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('glod', 1, 0, 10)">+</button>
+      <button class="btn glod-plus" onclick="updateValue('glod', 1, 0, 10)"><span class="plus-text">+</span></button>
     </div>
     <div class="counter">
       <span class="red">Życie</span>
-      <button class="btn zycie-minus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('zycie', -1, 0, 10)">-</button>
+      <button class="btn zycie-minus" onclick="updateValue('zycie', -1, 0, 10)"><span class="plus-text">-</span></button>
       <div id="zycie" class="value red">10</div>
-      <button class="btn zycie-plus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('zycie', 1, 0, 10)">+</button>
+      <button class="btn zycie-plus" onclick="updateValue('zycie', 1, 0, 10)"><span class="plus-text">+</span></button>
     </div>
     <div class="counter">
       <span class="blue">Doświadczenie</span>
-      <button class="btn doswiadczenie-minus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('doswiadczenie', -1, 0, 20)">-</button>
+      <button class="btn doswiadczenie-minus" onclick="updateValue('doswiadczenie', -1, 0, 20)"><span class="plus-text">-</span></button>
       <div id="doswiadczenie" class="value blue">0</div>
-      <button class="btn doswiadczenie-plus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('doswiadczenie', 1, 0, 20)">+</button>
+      <button class="btn doswiadczenie-plus" onclick="updateValue('doswiadczenie', 1, 0, 20)"><span class="plus-text">+</span></button>
     </div>
   </div>
 
