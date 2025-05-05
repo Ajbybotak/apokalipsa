@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Licznik punktów</title>
+  <title>Liczniki punktów:</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -171,7 +171,7 @@
       text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;
       color: white;
       position: relative;
-      top: -30px;
+      top: -15px;
     }
 
     .black { color: black; }
@@ -211,7 +211,7 @@
 
     function toggleFilmMode() {
       showBonus = !showBonus;
-      document.getElementById('main-title').textContent = showBonus ? 'Bonusowy film' : 'Licznik punktów';
+      document.getElementById('main-title').textContent = showBonus ? 'Bonusowy film:' : 'Liczniki punktów:';
       document.getElementById('bonus-section').style.display = showBonus ? 'flex' : 'none';
       document.getElementById('counters').style.display = showBonus ? 'none' : 'flex';
       document.querySelector('.reset-death-container').style.display = showBonus ? 'none' : 'flex';
