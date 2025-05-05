@@ -182,12 +182,12 @@
       let seconds = 10;
 
       msg.style.display = 'block';
-      msg.textContent = 'Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (Ten napis zniknie za ${seconds}';
+      msg.textContent = 'Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (ten napis zniknie za 10';
       
       const interval = setInterval(() => {
         seconds--;
         if (seconds > 0) {
-          msg.textContent = `Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (Ten napis zniknie za ${seconds} sekund)`;
+          msg.textContent = `Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (ten napis zniknie za ${seconds})`;
         } else {
           msg.style.display = 'none';
           clearInterval(interval);
