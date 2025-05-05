@@ -73,7 +73,7 @@
       cursor: pointer;
       border-radius: 15px;
       border-width: 5px;
-      border: color(black);
+      border: 5px solid black;
       width: 70px;
       height: 70px;
       align-items: center;
@@ -88,7 +88,7 @@
       font-size: 20px;
       padding: 14px 28px;
       font-weight: bold;
-      border: color(black);
+      border: 5px solid black;
       border-radius: 25px;
       border-width: 5px;
     }
@@ -271,12 +271,15 @@
     }
 
     function rollDice(btn) {
-      let i = 0;
-      const interval = setInterval(() => {
+      let rolls = 15;
+      let delay = 100;
+
+      for (let i = 0; i < rolls; i++) {
+        setTimeout(() => {
         const roll = Math.floor(Math.random() * 6) + 1;
         btn.textContent = diceUnicode(roll);
-        if (++i > 15) clearInterval(interval);
-      }, 100 + i * 10);
+        }, i * delay);
+      }
     }
 
     function diceUnicode(n) {
