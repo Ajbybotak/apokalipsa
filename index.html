@@ -208,6 +208,8 @@
   <script>
     let showBonus = false;
     let muted = true;
+    const sound = new Audio('sound.MP3');
+    sound.loop = true; // opcjonalnie – jeśli chcesz pętlę
 
     function toggleFilmMode() {
       showBonus = !showBonus;
@@ -221,6 +223,13 @@
     function toggleMute(btn) {
       muted = !muted;
       btn.textContent = muted ? '🔇' : '🔊';
+
+      if (muted) {
+        sound.pause();
+        sound.currentTime = 0; // zatrzymuje dźwięk natychmiast
+      } else {
+        sound.play();
+      }
     }
 
     function updateValue(id, delta, min, max) {
@@ -337,7 +346,7 @@
 
   <div id="bonus-section">
     <div id="bonus-instruction">
-      Jeśli chcesz obejrzeć bonusowy film:
+      Jeśli chcesz obejrzeć bonusowy film:<br>
       1. Ustaw wszystkie kafelki planszy jeden na drugim (pierwszy kafelek na dole, ostatni na górze)<br>
       2. Odwróć cały stos do góry nogami<br>
       3. Wpisuj litery które widzisz po kolei.<br>
