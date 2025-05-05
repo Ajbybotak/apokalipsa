@@ -106,6 +106,15 @@
     color: white;
     }
 
+    .bron-plus {
+      background-image: url('bron.png');
+      background-size: cover;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      font-weight: bold;
+    }
+
     .doswiadczenie-value {
     background-image: url('doswiadczenie.png');
     background-size: cover;
@@ -241,7 +250,7 @@
       <button class="btn black-btn" onclick="updateValue('bron', -1, 0, 20)">-</button>
       <div id="bron" class="value black">1</div>
       <img src="bron.png" alt="Broń" class="icon-between">
-      <button class="btn black-btn" onclick="updateValue('bron', 1, 0, 20)">+</button>
+      <button class="btn bron-plus" onclick="updateValue('bron', 1, 0, 20)">+</button>
     </div>
     <div class="counter">
       <span class="green">Głód</span>
