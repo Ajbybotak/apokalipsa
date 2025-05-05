@@ -177,10 +177,22 @@
       document.getElementById('glod').textContent = getRandom();
       document.getElementById('zycie').textContent = getRandom();
       document.getElementById('doswiadczenie').textContent = getRandom();
+
       const msg = document.getElementById('death-message');
-      msg.textContent = 'Ustaw punkty broni na numer ostatnio dodanego kafelka planszy.';
+      let seconds = 10;
+
       msg.style.display = 'block';
-      setTimeout(() => { msg.style.display = 'none'; }, 10000);
+      msg.textContent = 'Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (Ten napis zniknie za ${seconds}';
+      
+      const interval = setInterval(() => {
+        seconds--;
+        if (seconds > 0) {
+          msg.textContent = `Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (Ten napis zniknie za ${seconds} sekund)`;
+        } else {
+          msg.style.display = 'none';
+          clearInterval(interval);
+        }
+      }, 1000);
     }
 
     function checkCode() {
