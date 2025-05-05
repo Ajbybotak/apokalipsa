@@ -94,7 +94,70 @@
       background-size: cover;        /* Dopasuj do rozmiaru przycisku */
       background-repeat: no-repeat;
       background-position: center;
-      background-color: rgb(158, 158, 158);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      background-color: rgb(95, 95, 95);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      font-weight: bold;
+    }
+
+    .bron-minus {
+      background-image: url('niebron.png');
+      background-size: cover;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(95, 95, 95);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      font-weight: bold;
+    }
+
+    .glod-plus {
+      background-image: url('glod.png');
+      background-size: cover;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(168, 101, 0);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      font-weight: bold;
+    }
+
+    .glod-minus {
+      background-image: url('nieglod.png');
+      background-size: cover;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(168, 101, 0);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      font-weight: bold;
+    }
+
+    .zycie-plus {
+      background-image: url('zycie.png');
+      background-size: cover;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(148, 0, 0);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      font-weight: bold;
+    }
+
+    .zycie-minus {
+      background-image: url('niezycie.png');
+      background-size: cover;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(148, 0, 0);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      font-weight: bold;
+    }
+
+    .doswiadczenie-plus {
+      background-image: url('doswiadczenie.png');
+      background-size: cover;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(16, 134, 6);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
+      font-weight: bold;
+    }
+
+    .doswiadczenie-minus {
+      background-image: url('niedoswiadczenie.png');
+      background-size: cover;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(16, 134, 6);                  /* Zmiana koloru tekstu jeśli obrazek ciemny */
       font-weight: bold;
     }
 
@@ -225,27 +288,27 @@
   <div id="counters" class="counters">
     <div class="counter">
       <span class="black">Broń</span>
-      <button class="btn black-btn" style="color: white;" onclick="updateValue('bron', -1, 0, 20)">-</button>
+      <button class="btn bron-minus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('bron', -1, 0, 20)">-</button>
       <div id="bron" class="value black">1</div>
       <button class="btn bron-plus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('bron', 1, 0, 20)">+</button>
     </div>
     <div class="counter">
       <span class="green">Głód</span>
-      <button class="btn green-btn" onclick="updateValue('glod', -1, 0, 10)">-</button>
+      <button class="btn glod-minus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('glod', -1, 0, 10)">-</button>
       <div id="glod" class="value green">10</div>
-      <button class="btn green-btn" onclick="updateValue('glod', 1, 0, 10)">+</button>
+      <button class="btn glod-plus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('glod', 1, 0, 10)">+</button>
     </div>
     <div class="counter">
       <span class="red">Życie</span>
-      <button class="btn red-btn" onclick="updateValue('zycie', -1, 0, 10)">-</button>
+      <button class="btn zycie-minus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('zycie', -1, 0, 10)">-</button>
       <div id="zycie" class="value red">10</div>
-      <button class="btn red-btn" onclick="updateValue('zycie', 1, 0, 10)">+</button>
+      <button class="btn zycie-plus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('zycie', 1, 0, 10)">+</button>
     </div>
     <div class="counter">
       <span class="blue">Doświadczenie</span>
-      <button class="btn blue-btn" onclick="updateValue('doswiadczenie', -1, 0, 20)">-</button>
+      <button class="btn doswiadczenie-minus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('doswiadczenie', -1, 0, 20)">-</button>
       <div id="doswiadczenie" class="value blue">0</div>
-      <button class="btn blue-btn" onclick="updateValue('doswiadczenie', 1, 0, 20)">+</button>
+      <button class="btn doswiadczenie-plus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;" onclick="updateValue('doswiadczenie', 1, 0, 20)">+</button>
     </div>
   </div>
 
