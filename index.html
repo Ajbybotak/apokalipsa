@@ -82,25 +82,7 @@
     .reset-death-container button {
       font-size: 20px;
       padding: 14px 28px;
-    }
-    .bron-value {
-    background-image: url('bron.png');
-    background-size: cover;
-    background-position: center;
-    }
-
-    .glod-value {
-    background-image: url('glod.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    }
-
-    .zycie-value {
-    background-image: url('zycie.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
+      font-weight: bold;
     }
 
     .bron-plus {
@@ -112,12 +94,6 @@
       font-weight: bold;
     }
 
-    .doswiadczenie-value {
-    background-image: url('doswiadczenie.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    }
     .black { color: black; }
     .green { color: rgb(139, 102, 0); }
     .red { color: red; }
@@ -142,6 +118,7 @@
       text-align: left;
       margin-bottom: 10px;
       transform: translateY(100px);
+      font-weight: bold;
     }
     a {
       color: blue;
@@ -246,7 +223,7 @@
       <span class="black">Broń</span>
       <button class="btn black-btn" style="color: white;" onclick="updateValue('bron', -1, 0, 20)">-</button>
       <div id="bron" class="value black">1</div>
-      <button class="btn bron-plus" style="color: white; text-shadow: -3px -3px 0 black; text-shadow: 3px -3px 0 black; text-shadow: -3px 3px 0 black; text-shadow: 3px 3px 0 black;" onclick="updateValue('bron', 1, 0, 20)">+</button>
+      <button class="btn bron-plus" style="color: white; text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black;" onclick="updateValue('bron', 1, 0, 20)">+</button>
     </div>
     <div class="counter">
       <span class="green">Głód</span>
@@ -282,7 +259,7 @@
       3. Wpisuj litery które widzisz po kolei.<br>
       4. Obejrzyj bonusowy film!
     </div>
-    <input type="text" id="code-input" oninput="checkCode()" placeholder="Tu wpisz kod..." style="transform: translateY(100px); width: 375px; height: 50px; font-size: 40px;"/>
+    <input type="text" id="code-input" oninput="checkCode()" placeholder="Tu wpisz kod..." style="transform: translateY(100px); width: 375px; height: 50px; font-size: 40px; font-weight: bold;"/>
     <div id="code-output" style="transform: translateY(110px); font-size: 35px;"></div>
   </div>
 </body>
