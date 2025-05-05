@@ -92,13 +92,6 @@
     color: white;
     }
 
-    .icon-between {
-    width: 60px;      /* dopasuj do swojego projektu */
-    height: 60px;
-    margin: -10 -10px;    /* odstęp po bokach */
-    vertical-align: middle;
-    }
-
     .zycie-value {
     background-image: url('zycie.png');
     background-size: cover;
@@ -249,28 +242,24 @@
       <span class="black">Broń</span>
       <button class="btn black-btn" style="color: white;" onclick="updateValue('bron', -1, 0, 20)">-</button>
       <div id="bron" class="value black">1</div>
-      <img src="bron.png" alt="Broń" class="icon-between">
       <button class="btn bron-plus" style="color: white; text-shadow: -1px -1px 0 black;" onclick="updateValue('bron', 1, 0, 20)">+</button>
     </div>
     <div class="counter">
       <span class="green">Głód</span>
       <button class="btn green-btn" onclick="updateValue('glod', -1, 0, 10)">-</button>
       <div id="glod" class="value green">10</div>
-      <img src="glod.png" alt="Głód" class="icon-between">
       <button class="btn green-btn" onclick="updateValue('glod', 1, 0, 10)">+</button>
     </div>
     <div class="counter">
       <span class="red">Życie</span>
       <button class="btn red-btn" onclick="updateValue('zycie', -1, 0, 10)">-</button>
       <div id="zycie" class="value red">10</div>
-      <img src="zycie.png" alt="Życie" class="icon-between">
       <button class="btn red-btn" onclick="updateValue('zycie', 1, 0, 10)">+</button>
     </div>
     <div class="counter">
       <span class="blue">Doświadczenie</span>
       <button class="btn blue-btn" onclick="updateValue('doswiadczenie', -1, 0, 20)">-</button>
       <div id="doswiadczenie" class="value blue">0</div>
-      <img src="doswiadczenie.png" alt="Doświadczenie" class="icon-between">
       <button class="btn blue-btn" onclick="updateValue('doswiadczenie', 1, 0, 20)">+</button>
     </div>
   </div>
