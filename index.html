@@ -62,12 +62,13 @@
       text-align: center;
     }
     .btn {
-      font-size: 24px;
+      font-size: 35px;
       padding: 12px 20px;
       margin: 0 5px;
       cursor: pointer;
       border-radius: 5px;
       border: none;
+      font-weight: bold;
     }
     .reset-death-container {
       display: flex;
@@ -247,7 +248,7 @@
   <div id="counters" class="counters">
     <div class="counter">
       <span class="black">Broń</span>
-      <button class="btn black-btn" onclick="updateValue('bron', -1, 0, 20)">-</button>
+      <button class="btn black-btn" style="color: black;" onclick="updateValue('bron', -1, 0, 20)">-</button>
       <div id="bron" class="value black">1</div>
       <img src="bron.png" alt="Broń" class="icon-between">
       <button class="btn bron-plus" onclick="updateValue('bron', 1, 0, 20)">+</button>
