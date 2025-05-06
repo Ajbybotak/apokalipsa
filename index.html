@@ -68,6 +68,9 @@
     }
 
     .zombie-button-first {
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
       position: absolute;
       width: 230px;
       height: 100px;
@@ -500,8 +503,28 @@
         buttonFirstDiv.classList.add('show');
         buttonSecondDiv.classList.add('show');
         buttonThirdDiv.classList.add('show');
+
+        addRandomTextToButton();
       }
     }
+
+    function addRandomTextToButton() {
+      // Tablica z napisami, które będą losowane
+      const possibleTexts = [
+      'Napad', 'Uciekaj!', 'Zombiak', 'O nie!', 'Biegaj!', 
+      'Zatrzymaj się', 'Uważaj!', 'Pomoc!', 'Bez paniki', 'Spokój'
+      ];
+
+      // Generowanie losowego indeksu w tablicy
+      const randomIndex = Math.floor(Math.random() * possibleTexts.length);
+
+      // Znajdowanie przycisku
+      const button = document.querySelector('.zombie-button-first');
+
+      // Ustawienie losowego napisu w przycisku
+      button.textContent = possibleTexts[randomIndex];
+    }
+
 
     function updateValue(id, delta, min, max) {
       const valueElem = document.getElementById(id);
