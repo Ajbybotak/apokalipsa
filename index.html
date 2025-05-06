@@ -198,14 +198,25 @@
 
     .buttonEvent.show {
       transform: translateX(-350px);
-      animation: buttonsShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
-      animation-delay: 0.6s;
+      animation: buttonEventShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes buttonEventShow {
+      to {
+        transform: translateX(0px);
+      }
     }
 
     .buttonEvent.hide {
       transform: translateX(0px);
-      animation: buttonsHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
-      animation-delay: 0.6s;
+      animation: buttonEventHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
+    }
+
+    @keyframes buttonEventHide {
+      to {
+        transform: translateX(-350px);
+      }
     }
 
     .icon-slide-right {
@@ -615,6 +626,7 @@
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
+      let existingButtonEvent = document.querySelector('.buttonEvent');
 
       existingButtonFirst.classList.remove('show');
       existingButtonFirst.classList.add('hide');
@@ -624,6 +636,9 @@
 
       existingButtonThird.classList.remove('show');
       existingButtonThird.classList.add('hide');
+
+      existingButtonEvent.classList.remove('hide');
+      existingButtonEvent.classList.add('show');
 
       const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
 
