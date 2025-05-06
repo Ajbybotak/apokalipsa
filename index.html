@@ -31,6 +31,19 @@
       gap: 15px;
     }
 
+    .icon-slide-right {
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideRight 1.5s ease-out forwards;
+    }
+
+    @keyframes slideRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
     .icon-slide-down {
       opacity: 0;
       transform: translateY(-200px);
@@ -42,16 +55,6 @@
         opacity: 1;
         transform: translateY(0);
       }
-    }
-
-    .icon-slide-down:nth-child(1) {
-      animation-delay: 1s;
-    }
-    .icon-slide-down:nth-child(2) {
-      animation-delay: 3s;
-    }
-    .icon-slide-down:nth-child(3) {
-      animation-delay: 5s;
     }
 
     .top-buttons button {
@@ -333,7 +336,7 @@
     <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">🎲</button>
   </div>
 
-  <h1 id="main-title">Liczniki punktów:</h1>
+  <h1 id="main-title" class="icon-slide-down">Liczniki punktów:</h1>
 
   <div id="counters" class="counters">
     <div class="counter">
