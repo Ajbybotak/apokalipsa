@@ -86,27 +86,27 @@
 
     .icon-slide-left-smierc {
       opacity: 1;
-      transform: translateY(-50px) translateX(300px);
+      transform: translateY(-55px) translateX(300px);
       animation: slideLeftSmierc 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
     @keyframes slideLeftSmierc {
       to {
         opacity: 1;
-        transform: translateY(-50px) translateX(0);
+        transform: translateY(-55px) translateX(0);
       }
     }
 
     .icon-slide-right-resetuj {
       opacity: 1;
-      transform: translateY(-50px) translateX(-300px);
+      transform: translateY(-55px) translateX(-300px);
       animation: slideRightResetuj 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
     @keyframes slideRightResetuj {
       to {
         opacity: 1;
-        transform: translateY(-50px) translateX(0);
+        transform: translateY(-55px) translateX(0);
       }
     }
 
@@ -385,6 +385,7 @@
       let seconds = 10;
 
       msg.style.display = 'block';
+      msg.style.transform = 'translateY(-50px)';
       msg.textContent = 'Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (ten napis zniknie za 10)';
       
       const interval = setInterval(() => {
