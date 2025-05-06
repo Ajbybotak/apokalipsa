@@ -593,7 +593,8 @@
         const x = (Math.random() - 0.5) * intensity;
         const y = (Math.random() - 0.5) * intensity;
 
-        zombie.style.transform = `translate(${x}px, ${y}px)`;
+        zombie.style.left = `${x}px`;
+        zombie.style.top = `${y}px`;
       
         // Zwiększ lub zmniejsz intensywność
         if (growing) {
