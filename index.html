@@ -46,7 +46,7 @@
     }
 
     .zombie.show {
-      transform: translateX(300px);
+      transform: translateX(250px);
       animation: zombieShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
@@ -63,7 +63,7 @@
 
     @keyframes zombieHide {
       to {
-        transform: translateX(300px);
+        transform: translateX(250px);
       }
     }
 
@@ -442,15 +442,18 @@
 
     function rollDice(btn) {
       let rolls = 15;
-      let delay = 100;
+      let baseDelay = 50;
 
       for (let i = 0; i < rolls; i++) {
-        setTimeout(() => {
+      // Każde kolejne opóźnienie będzie większe (np. kwadratowo)
+      let delay = baseDelay * i * (i / 3 + 1);
+
+      setTimeout(() => {
         const roll = Math.floor(Math.random() * 6) + 1;
         btn.textContent = diceUnicode(roll);
-        }, i * delay);
-      }
+      }, delay);
     }
+  }
 
     function diceUnicode(n) {
       return ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'][n - 1];
