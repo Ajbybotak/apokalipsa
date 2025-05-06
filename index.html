@@ -441,8 +441,15 @@
     }
 
     function rollDice(btn) {
-      const roll = Math.floor(Math.random() * 6) + 1;
-      btn.textContent = diceUnicode(roll);
+      let rolls = 15;
+      let delay = 100;
+
+      for (let i = 0; i < rolls; i++) {
+        setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+        }, i * delay);
+      }
     }
 
     function diceUnicode(n) {
