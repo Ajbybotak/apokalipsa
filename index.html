@@ -594,11 +594,11 @@
       
         // Zwiększ lub zmniejsz intensywność
         if (growing) {
-          intensity += 0.5;
+          intensity += 5;
           if (intensity >= 100) growing = false; // osiągnęliśmy maksimum
         } else {
-          intensity -= 0.5;
-          if (intensity <= 0.5) {
+          intensity -= 5;
+          if (intensity <= 5) {
             clearInterval(shakeInterval);
             zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
             console.log('zombieShake done');
