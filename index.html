@@ -36,13 +36,24 @@
 
     .zombie {
       position: absolute;
-      bottom: -35px;
+      bottom: -45px;
       right: -40px;
       width: 216px;
       height: 420px;
       background-size: cover;
       background-position: center;
       outline: 2px solid red;
+    }
+
+    .zombie.show {
+      transform: translateX(220px);
+      animation: zombieShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    @keyframes zombieShow {
+      to {
+        transform: translateX(0);
+      }
     }
 
     .icon-slide-right {
@@ -341,7 +352,12 @@
             
       // Jeśli obrazek istnieje, usuwamy go
       if (existingZombie) {
-        existingZombie.remove();
+        existingZombie.classList.remove('show');
+        existingZombie.classList.add('hide');
+
+        setTimeout(() => {
+          existingZombie.remove();
+        }, 1500);
       } else {
         // Tworzymy nowy element obrazka
         let zombieDiv = document.createElement('div');
@@ -358,6 +374,10 @@
         
         // Dodajemy element do body
         document.body.appendChild(zombieDiv);
+
+        void zombieDiv.offsetWidth;
+
+        zombieDiv.classList.add('show');
       }
     }
 
