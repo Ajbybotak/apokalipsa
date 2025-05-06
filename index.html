@@ -45,13 +45,13 @@
     }
 
     .icon-slide-down:nth-child(1) {
-      animation-delay: 0.1s;
+      animation-delay: 1s;
     }
     .icon-slide-down:nth-child(2) {
-      animation-delay: 0.3s;
+      animation-delay: 3s;
     }
     .icon-slide-down:nth-child(3) {
-      animation-delay: 0.5s;
+      animation-delay: 5s;
     }
 
     .top-buttons button {
@@ -328,8 +328,8 @@
 </head>
 <body>
   <div class="top-buttons icon-slide-down">
-    <button class="top-buttons icon-slide-down:nth-child(2)" onclick="toggleFilmMode()">🎬</button>
-    <button class="top-buttons icon-slide-down:nth-child(2)" onclick="toggleMute(this)">🔇</button>
+    <button class="icon-slide-down:nth-child(3)" onclick="toggleFilmMode()">🎬</button>
+    <button class="icon-slide-down:nth-child(2)" onclick="toggleMute(this)">🔇</button>
     <button id="dice-btn" class="dice-icon icon-slide-down:nth-child(1)" onclick="rollDice(this)">🎲</button>
   </div>
 
