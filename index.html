@@ -598,17 +598,17 @@
       
         // Zwiększ lub zmniejsz intensywność
         if (growing) {
-          intensity += 1;
+          intensity += 0.5;
           if (intensity >= 10) growing = false; // osiągnęliśmy maksimum
         } else {
-          intensity -= 1;
-          if (intensity <= 1) {
+          intensity -= 0.5;
+          if (intensity <= 0) {
             clearInterval(shakeInterval);
             zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
             console.log('zombieShake done');
           }
         }
-      }, 50);
+      }, 25);
     }
 
     function zombieEvent() {
