@@ -61,20 +61,26 @@
       animation: zombieHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
     }
 
-    .zombie-buttons {
+    @keyframes zombieHide {
+      to {
+        transform: translateX(250px);
+      }
+    }
+
+    .zombie-button-first {
       position: absolute;
       width: 400px;
       height: 90px;
       background-color: #444;
       border: 5px solid black;
-      outline: 2px solid red;
       cursor: pointer;
       border-radius: 15px;
       border-width: 5px;
       left: 40px;
+      bottom: 500px;
     }
 
-    .zombie-buttons.show {
+    .zombie-button-first.show {
       transform: translateX(-250px);
       animation: buttonsShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
@@ -85,7 +91,7 @@
       }
     }
 
-    .zombie-buttons.hide {
+    .zombie-button-first.hide {
       transform: translateX(0px);
       animation: buttonsHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
     }
@@ -96,22 +102,50 @@
       }
     }
 
-    .zombie-button.first {
-      bottom: 200px;
+    .zombie-button-second {
+      position: absolute;
+      width: 400px;
+      height: 90px;
+      background-color: #444;
+      border: 5px solid black;
+      cursor: pointer;
+      border-radius: 15px;
+      border-width: 5px;
+      left: 40px;
+      bottom: 300px;
     }
 
-    .zombie-button.second {
-      bottom: 150px;
+    .zombie-button-second.show {
+      transform: translateX(-250px);
+      animation: buttonsShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
-    .zombie-button.third {
+    .zombie-button-second.hide {
+      transform: translateX(0px);
+      animation: buttonsHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
+    }
+
+    .zombie-button-third {
+      position: absolute;
+      width: 400px;
+      height: 90px;
+      background-color: #444;
+      border: 5px solid black;
+      cursor: pointer;
+      border-radius: 15px;
+      border-width: 5px;
+      left: 40px;
       bottom: 100px;
     }
 
-    @keyframes zombieHide {
-      to {
-        transform: translateX(250px);
-      }
+    .zombie-button-third.show {
+      transform: translateX(-250px);
+      animation: buttonsShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    .zombie-button-third.hide {
+      transform: translateX(0px);
+      animation: buttonsHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
     }
 
     .icon-slide-right {
@@ -407,15 +441,23 @@
     function toggleZombieMode() {
       // Sprawdzamy, czy obrazek już jest na stronie
       let existingZombie = document.querySelector('.zombie');
-      let existingButtons = document.querySelector('.zombie-buttons');
+      let existingButtonFirst = document.querySelector('.zombie-button-first');
+      let existingButtonSecond = document.querySelector('.zombie-button-second');
+      let existingButtonThird = document.querySelector('.zombie-button-third');
             
       // Jeśli obrazek istnieje, usuwamy go
       if (existingZombie) {
         existingZombie.classList.remove('show');
         existingZombie.classList.add('hide');
 
-        existingButtons.classList.remove('show');
-        existingButtons.classList.add('hide');
+        existingButtonFirst.classList.remove('show');
+        existingButtonFirst.classList.add('hide');
+
+        existingButtonSecond.classList.remove('show');
+        existingButtonSecond.classList.add('hide');
+
+        existingButtonThird.classList.remove('show');
+        existingButtonThird.classList.add('hide');
 
         setTimeout(() => {
           existingZombie.remove();
@@ -424,9 +466,13 @@
       } else {
         // Tworzymy nowy element obrazka
         let zombieDiv = document.createElement('div');
-        let buttonsDiv = document.createElement('div')
+        let buttonFirstDiv = document.createElement('div')
+        let buttonSecondDiv = document.createElement('div')
+        let buttonThirdDiv = document.createElement('div')
         zombieDiv.classList.add('zombie');
-        buttonsDiv.classList.add('zombie-buttons');
+        buttonFirstDiv.classList.add('zombie-button-first');
+        buttonFirstDiv.classList.add('zombie-button-second');
+        buttonFirstDiv.classList.add('zombie-button-third');
                 
         // Lista dostępnych obrazków
         let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
@@ -439,13 +485,19 @@
         
         // Dodajemy element do body
         document.body.appendChild(zombieDiv);
-        document.body.appendChild(buttonsDiv);
+        document.body.appendChild(buttonFirstDiv);
+        document.body.appendChild(buttonSecondDiv);
+        document.body.appendChild(buttonThirdDiv);
 
         void zombieDiv.offsetWidth;
-        void buttonsDiv.offsetWidth;
+        void buttonFirstDiv.offsetWidth;
+        void buttonSecondDiv.offsetWidth;
+        void buttonThirdDiv.offsetWidth;
 
         zombieDiv.classList.add('show');
-        buttonsDiv.classList.add('show');
+        buttonFirstDiv.classList.add('show');
+        buttonSecondDiv.classList.add('show');
+        buttonThirdDiv.classList.add('show');
       }
     }
 
