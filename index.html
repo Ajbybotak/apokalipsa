@@ -544,6 +544,10 @@
     }
 
     function zombieEvent() {
+      let existingButtonFirst = document.querySelector('.zombie-button-first');
+      let existingButtonSecond = document.querySelector('.zombie-button-second');
+      let existingButtonThird = document.querySelector('.zombie-button-third');
+
       existingButtonFirst.classList.remove('show');
       existingButtonFirst.classList.add('hide');
 
