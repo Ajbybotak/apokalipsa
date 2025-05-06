@@ -35,7 +35,7 @@
     }
 
     .zombie {
-      position: absolute;
+      position: relative;
       bottom: -45px;
       right: -40px;
       width: 216px;
@@ -569,8 +569,8 @@
               // Nic się nie dzieje (50% szans)
               zombieShake();
             } else {
-              zombieEvent(); // wywołanie funkcji event()
               zombieShake();
+              zombieEvent(); // wywołanie funkcji event()
             }
           });
         });
