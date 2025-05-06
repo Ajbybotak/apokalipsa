@@ -590,19 +590,19 @@
 
       const shakeInterval = setInterval(() => {
         // Wygeneruj losowe przesunięcia
-        const x = (Math.random() - 0.5) * intensity;
-        const y = (Math.random() - 0.5) * intensity;
+        const x = (Math.random() - 0.5) * intensity - 45;
+        const y = (Math.random() - 0.5) * intensity - 40;
 
-        zombie.style.left = `${x}px`;
-        zombie.style.top = `${y}px`;
+        zombie.style.right = `${x}px`;
+        zombie.style.bottom = `${y}px`;
       
         // Zwiększ lub zmniejsz intensywność
         if (growing) {
-          intensity += 2;
+          intensity += 1;
           if (intensity >= 20) growing = false; // osiągnęliśmy maksimum
         } else {
-          intensity -= 2;
-          if (intensity <= 5) {
+          intensity -= 1;
+          if (intensity <= 1) {
             clearInterval(shakeInterval);
             zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
             console.log('zombieShake done');
