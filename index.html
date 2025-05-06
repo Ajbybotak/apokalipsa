@@ -173,6 +173,38 @@
       animation-delay: 0.6s;
     }
 
+    .buttonEvent {
+      color: white;
+      align-items: center;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: bold;
+      position: absolute;
+      width: 230px;
+      height: 100px;
+      background-color: #444;
+      border: 5px solid black;
+      cursor: pointer;
+      border-radius: 15px;
+      border-width: 5px;
+      left: 5px;
+      bottom: 5px;
+    }
+
+    .buttonEvent.show {
+      transform: translateX(-350px);
+      animation: buttonsShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+      animation-delay: 0.6s;
+    }
+
+    .buttonEvent.hide {
+      transform: translateX(0px);
+      animation: buttonsHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
+      animation-delay: 0.6s;
+    }
+
     .icon-slide-right {
       opacity: 1;
       transform: translateX(-100px);
@@ -535,12 +567,42 @@
             const chance = Math.random(); // losowa liczba od 0 do 1
             if (chance < 0.5) {
               // Nic się nie dzieje (50% szans)
+              zombieShake();
             } else {
               zombieEvent(); // wywołanie funkcji event()
+              zombieShake();
             }
           });
         });
       }
+    }
+
+    function zombieShake() {
+      const zombie = document.querySelector('.zombie');
+      if (!zombie) return;
+
+      let intensity = 1;
+      let growing = true;
+
+      const shakeInterval = setInterval(() => {
+        // Wygeneruj losowe przesunięcia
+        const x = (Math.random() - 0.5) * intensity;
+        const y = (Math.random() - 0.5) * intensity;
+
+        zombie.style.transform = `translate(${x}px, ${y}px)`;
+      
+        // Zwiększ lub zmniejsz intensywność
+        if (growing) {
+          intensity += 0.5;
+          if (intensity >= 10) growing = false; // osiągnęliśmy maksimum
+        } else {
+          intensity -= 0.5;
+          if (intensity <= 0.5) {
+            clearInterval(shakeInterval);
+            zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
+          }
+        }
+      }, 50);
     }
 
     function zombieEvent() {
@@ -556,6 +618,13 @@
 
       existingButtonThird.classList.remove('show');
       existingButtonThird.classList.add('hide');
+
+      const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
+
+      let indexEvent;
+      indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
+
+      buttonEvent.textContent = possibleTextsEvent[indexEvent]
     }
 
 
