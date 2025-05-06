@@ -18,7 +18,7 @@
     }
     h1 {
       margin-bottom: 10px;
-      transform: translateY(-40px);
+      transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
     }
@@ -299,6 +299,10 @@
       }
     }
 
+    function toggleZombieMode() {
+      
+    }
+
     function updateValue(id, delta, min, max) {
       const valueElem = document.getElementById(id);
       let value = parseInt(valueElem.textContent);
@@ -373,6 +377,7 @@
     <button onclick="toggleFilmMode()">🎬</button>
     <button onclick="toggleMute(this)">🔇</button>
     <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">⚅</button>
+    <button onclick="toggleZombieMode()">🧟</button>
   </div>
 
   <h1 id="main-title" class="icon-slide-down">Liczniki punktów:</h1>
