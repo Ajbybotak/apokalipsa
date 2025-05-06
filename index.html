@@ -35,7 +35,7 @@
     }
 
     .zombie {
-      position: relative;
+      position: absolute;
       bottom: -45px;
       right: -40px;
       width: 216px;
@@ -598,10 +598,10 @@
       
         // Zwiększ lub zmniejsz intensywność
         if (growing) {
-          intensity += 1;
-          if (intensity >= 40) growing = false; // osiągnęliśmy maksimum
+          intensity += 2;
+          if (intensity >= 20) growing = false; // osiągnęliśmy maksimum
         } else {
-          intensity -= 1;
+          intensity -= 2;
           if (intensity <= 5) {
             clearInterval(shakeInterval);
             zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
