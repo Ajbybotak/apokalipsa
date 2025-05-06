@@ -48,13 +48,27 @@
       opacity: 0;
       transform: translateY(-200px) translateX(35px);
       animation: slideDown 1.5s ease-out forwards;
-      animation-delay: 1s;
+      animation-delay: 0.5s;
     }
 
     @keyframes slideDown {
       to {
         opacity: 1;
         transform: translateY(0) translateX(35px);
+      }
+    }
+
+    .icon-slide-left {
+      opacity: 0;
+      transform: translateX(-300px);
+      animation: slideLeft 1.5s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes slideLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
 
@@ -339,7 +353,7 @@
 
   <h1 id="main-title" class="icon-slide-down">Liczniki punktów:</h1>
 
-  <div id="counters" class="counters">
+  <div id="counters" class="counters icon-slide-left">
     <div class="counter">
       <span class="black">Broń</span>
       <button class="btn bron-minus" onclick="updateValue('bron', -1, 0, 20)"><span class="plus-text">-</span></button>
