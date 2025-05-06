@@ -106,6 +106,12 @@
       font-size: 60px;
       transform: translateY(-20px);
     }
+    .top-buttons .zombie-icon {
+      background-image: url('zombieface.png');
+      background-size: 60px;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     .counters {
       display: flex;
       flex-direction: column;
@@ -300,7 +306,7 @@
     }
 
     function toggleZombieMode() {
-      
+
     }
 
     function updateValue(id, delta, min, max) {
@@ -377,7 +383,7 @@
     <button onclick="toggleFilmMode()">🎬</button>
     <button onclick="toggleMute(this)">🔇</button>
     <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">⚅</button>
-    <button onclick="toggleZombieMode()">🧟</button>
+    <button class="zombie-icon" onclick="toggleZombieMode()"></button>
   </div>
 
   <h1 id="main-title" class="icon-slide-down">Liczniki punktów:</h1>
