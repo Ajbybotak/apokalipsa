@@ -34,7 +34,7 @@
     .icon-slide-right {
       opacity: 1;
       transform: translateX(-100px);
-      animation: slideRight 1.5s ease-out forwards;
+      animation: slideRight 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
     @keyframes slideRight {
@@ -47,7 +47,7 @@
     .icon-slide-down {
       opacity: 1;
       transform: translateY(-200px) translateX(35px);
-      animation: slideDown 1.5s ease-out forwards;
+      animation: slideDown 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
       animation-delay: 0.2s;
     }
 
@@ -61,7 +61,7 @@
     .icon-slide-left {
       opacity: 1;
       transform: translateX(400px);
-      animation: slideLeft 1.5s ease-out forwards;
+      animation: slideLeft 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
       animation-delay: 0.7s;
     }
 
