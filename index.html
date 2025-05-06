@@ -69,6 +69,7 @@
 
     .zombie-button-first {
       color: white;
+      text-align: center;
       font-size: 25px;
       font-weight: bold;
       position: absolute;
@@ -514,15 +515,31 @@
       'Dokonanie 2 różnych wymian w sklepie.', 'Wyjście ze strefy.', 'Wejście do strefy.', 'Wejście na zużyte pole regeneracji.', 'Odkrycie nowego kafelka.', 
       'Przejście drogą za ponad 2 punkty głodu.', 'Śmierć gracza.', 'Przejście jednokierunkową drogą.', 'Wyrzucenie 6 podczas złotego losowania.',
       'Strata ponad 2 punktów życia w 1 turze.'];
+    
+      const usedIndices = new Set();
 
-      // Generowanie losowego indeksu w tablicy
-      const randomIndex = Math.floor(Math.random() * possibleTexts.length);
-
-      // Znajdowanie przycisku
-      const button = document.querySelector('.zombie-button-first');
-
-      // Ustawienie losowego napisu w przycisku
-      button.textContent = possibleTexts[randomIndex];
+      // Funkcja pomocnicza do losowania unikalnego indeksu
+      function getUniqueIndex() {
+        let index;
+        do {
+          index = Math.floor(Math.random() * possibleTexts.length);
+        } while (usedIndices.has(index));
+        usedIndices.add(index);
+        return index;
+      }
+    
+      const randomIndex1 = getUniqueIndex();
+      const randomIndex2 = getUniqueIndex();
+      const randomIndex3 = getUniqueIndex();
+    
+      // Ustawianie tekstów np. do 3 różnych przycisków (jeśli masz)
+      const button1 = document.querySelector('.zombie-button-first');
+      const button2 = document.querySelector('.zombie-button-second');
+      const button3 = document.querySelector('.zombie-button-third');
+    
+      if (button1) button1.textContent = possibleTexts[randomIndex1];
+      if (button2) button2.textContent = possibleTexts[randomIndex2];
+      if (button3) button3.textContent = possibleTexts[randomIndex3];
     }
 
 
