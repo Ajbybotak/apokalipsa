@@ -46,13 +46,24 @@
     }
 
     .zombie.show {
-      transform: translateX(220px);
+      transform: translateX(300px);
       animation: zombieShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
     @keyframes zombieShow {
       to {
         transform: translateX(0);
+      }
+    }
+
+    .zombie.hide {
+      transform: translateX(0px);
+      animation: zombieHide 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    @keyframes zombieHide {
+      to {
+        transform: translateX(-300px);
       }
     }
 
