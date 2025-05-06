@@ -48,7 +48,6 @@
       opacity: 1;
       transform: translateY(-200px) translateX(35px);
       animation: slideDown 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
-      /*animation-delay: 0.2s;*/
     }
 
     @keyframes slideDown {
@@ -60,12 +59,37 @@
 
     .icon-slide-left {
       opacity: 1;
-      transform: translateX(400px);
+      transform: translateX(500px);
       animation: slideLeft 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
-      /*animation-delay: 0.7s;*/
     }
 
     @keyframes slideLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .icon-slide-left-smierc {
+      opacity: 1;
+      transform: translateX(250px);
+      animation: slideLeftSmierc 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    @keyframes slideLeftSmierc {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .icon-slide-right-resetuj {
+      opacity: 1;
+      transform: translateX(-250px);
+      animation: slideRightResetuj 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    @keyframes slideRightResetuj {
       to {
         opacity: 1;
         transform: translateX(0);
@@ -383,8 +407,8 @@
   <div id="death-message" style="display:none; color: #444; font-size: 16px; margin-top: 10px;"></div>
 
   <div class="reset-death-container">
-    <button onclick="resetValues()">Resetuj</button>
-    <button onclick="smierc()">Śmierć</button>
+    <button class="icon-slide-right-resetuj" onclick="resetValues()">Resetuj</button>
+    <button class="icon-slide-left-smierc" onclick="smierc()">Śmierć</button>
   </div>
 
   <div id="bonus-section">
