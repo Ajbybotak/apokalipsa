@@ -527,8 +527,33 @@
         buttonThirdDiv.classList.add('show');
 
         addRandomTextToButton();
+
+        const buttons = document.querySelectorAll('.zombie-button-first, .zombie-button-second, .zombie-button-third');
+
+        buttons.forEach(button => {
+          button.addEventListener('click', () => {
+            const chance = Math.random(); // losowa liczba od 0 do 1
+            if (chance < 0.5) {
+              // Nic się nie dzieje (50% szans)
+            } else {
+              zombieEvent(); // wywołanie funkcji event()
+            }
+          });
+        });
       }
     }
+
+    function zombieEvent() {
+      existingButtonFirst.classList.remove('show');
+      existingButtonFirst.classList.add('hide');
+
+      existingButtonSecond.classList.remove('show');
+      existingButtonSecond.classList.add('hide');
+
+      existingButtonThird.classList.remove('show');
+      existingButtonThird.classList.add('hide');
+    }
+
 
     function addRandomTextToButton() {
       // Tablica z napisami, które będą losowane
