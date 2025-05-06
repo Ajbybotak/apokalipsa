@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liczniki punktów:</title>
+  <title>Apokalipsa Zombie!</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -30,6 +30,20 @@
       left: 20px;
       gap: 15px;
     }
+
+    .icon-slide-down {
+      opacity: 0;
+      transform: translateY(-50px);
+      animation: slideDown 0.6s ease-out forwards;
+    }
+
+    @keyframes slideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .top-buttons button {
       background: none;
       border: none;
@@ -206,6 +220,7 @@
     }
   </style>
   <script>
+    
     let showBonus = false;
     let muted = true;
     const sound = new Audio('sound.mp3');
@@ -303,9 +318,9 @@
 </head>
 <body>
   <div class="top-buttons">
-    <button onclick="toggleFilmMode()">🎬</button>
-    <button onclick="toggleMute(this)">🔇</button>
-    <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">🎲</button>
+    <button class="top-buttons icon-slide-down" onclick="toggleFilmMode()">🎬</button>
+    <button class="top-buttons icon-slide-down" onclick="toggleMute(this)">🔇</button>
+    <button id="dice-btn" class="dice-icon icon-slide-down" onclick="rollDice(this)">🎲</button>
   </div>
 
   <h1 id="main-title">Liczniki punktów:</h1>
