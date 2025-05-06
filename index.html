@@ -598,10 +598,10 @@
       
         // Zwiększ lub zmniejsz intensywność
         if (growing) {
-          intensity += 20;
-          if (intensity >= 300) growing = false; // osiągnęliśmy maksimum
+          intensity += 1;
+          if (intensity >= 40) growing = false; // osiągnęliśmy maksimum
         } else {
-          intensity -= 20;
+          intensity -= 1;
           if (intensity <= 5) {
             clearInterval(shakeInterval);
             zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
