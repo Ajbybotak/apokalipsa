@@ -186,14 +186,14 @@
       font-weight: bold;
       position: absolute;
       width: 230px;
-      height: 100px;
+      height: 150px;
       background-color: #444;
       border: 5px solid black;
       cursor: pointer;
       border-radius: 15px;
       border-width: 5px;
       left: 5px;
-      bottom: 5px;
+      bottom: 100px;
     }
 
     .buttonEvent.show {
@@ -547,12 +547,12 @@
         let buttonFirstDiv = document.createElement('div');
         let buttonSecondDiv = document.createElement('div');
         let buttonThirdDiv = document.createElement('div');
-        let buttonEventDiv = document.createElement('div');
+        // let buttonEventDiv = document.createElement('div');
         zombieDiv.classList.add('zombie');
         buttonFirstDiv.classList.add('zombie-button-first');
         buttonSecondDiv.classList.add('zombie-button-second');
         buttonThirdDiv.classList.add('zombie-button-third');
-        buttonEventDiv.classList.add('buttonEvent');
+        // buttonEventDiv.classList.add('buttonEvent');
                 
         // Lista dostępnych obrazków
         let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
@@ -568,19 +568,19 @@
         document.body.appendChild(buttonFirstDiv);
         document.body.appendChild(buttonSecondDiv);
         document.body.appendChild(buttonThirdDiv);
-        document.body.appendChild(buttonEventDiv);
+        // document.body.appendChild(buttonEventDiv);
 
         void zombieDiv.offsetWidth;
         void buttonFirstDiv.offsetWidth;
         void buttonSecondDiv.offsetWidth;
         void buttonThirdDiv.offsetWidth;
-        void buttonEventDiv.offsetWidth;
+        // void buttonEventDiv.offsetWidth;
 
         zombieDiv.classList.add('show');
         buttonFirstDiv.classList.add('show');
         buttonSecondDiv.classList.add('show');
         buttonThirdDiv.classList.add('show');
-        buttonEventDiv.classList.add('hide');
+        // buttonEventDiv.classList.add('hide');
 
         addRandomTextToButton();
 
@@ -652,10 +652,10 @@
 
       const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
 
-      let indexEvent;
-      indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
+      let indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
 
-      buttonEvent.textContent = possibleTextsEvent[indexEvent]
+      const buttonEvent = document.querySelector('.buttonEvent');
+      if (buttonEvent) buttonEvent.textContent = possibleTextsEvent[indexEvent]
     }
 
 
