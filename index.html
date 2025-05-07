@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -515,7 +515,7 @@
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
-      // let existingButtonEvent = document.querySelector('.buttonEvent');
+      let existingButtonEvent = document.querySelector('.buttonEvent');
             
       // Jeśli obrazek istnieje, usuwamy go
       if (existingZombie) {
@@ -531,9 +531,9 @@
         existingButtonThird.classList.remove('show');
         existingButtonThird.classList.add('hide');
         
-        if (buttonEventDiv) {
-          buttonEventDiv.classList.remove('show');
-          buttonEventDiv.classList.add('hide');
+        if (existitngButtonEvent) {
+          existingButtonEvent.classList.remove('show');
+          exsistingButtonEvent.classList.add('hide');
         }
 
         setTimeout(() => {
@@ -541,7 +541,7 @@
           existingButtonFirst.remove();
           existingButtonSecond.remove();
           existingButtonThird.remove();
-          buttonEventDiv.remove();
+          existingButtonEvent.remove();
         }, 2100);
       } else {
         // Tworzymy nowy element obrazka
@@ -638,12 +638,12 @@
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
-      // let existingButtonEvent = document.querySelector('.buttonEvent');
-      let buttonEventDiv = document.createElement('.buttonEvent');
+      let existingButtonEvent = document.querySelector('.buttonEvent');
+      /* let buttonEventDiv = document.createElement('.buttonEvent');
       buttonEventDiv.classList.add('buttonEvent');
       document.body.appendChild(buttonEventDiv);
       void buttonEventDiv.offsetWidth;
-      buttonEventDiv.classList.add('show');
+      buttonEventDiv.classList.add('show'); */
 
       existingButtonFirst.classList.remove('show');
       existingButtonFirst.classList.add('hide');
@@ -661,13 +661,14 @@
 
       let indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
 
-      const buttonEventDiv = document.querySelector('.buttonEvent');
-      if (buttonEventDiv) buttonEventDiv.textContent = possibleTextsEvent[indexEvent]
+      /* const existingButtonEvent = document.querySelector('.buttonEvent');
+      if (buttonEventDiv) */
+      existingButtonEvent.textContent = possibleTextsEvent[indexEvent]
 
-      buttonEventDiv.addEventListener('click', () => {
+      existingButtonEvent.addEventListener('click', () => {
         // kod
-        ButtonEventDiv.classList.remove('show');
-        ButtonEventDiv.classList.add('hide');
+        existingButtonEvent.classList.remove('show');
+        existingButtonEvent.classList.add('hide');
 
         setTimeout(() => {
           existingButtonFirst.classList.remove('hide');
@@ -678,8 +679,8 @@
 
           existingButtonThird.classList.remove('hide');
           existingButtonThird.classList.add('show');
-          ButtonEventDiv.remove();
-        }, 1500);
+          existingButtonEvent.remove();
+        }, 1800);
       });
     }
 
