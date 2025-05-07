@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -483,6 +483,7 @@
   </style>
   <script>
     
+    let count = 0;
     let showBonus = false;
     let muted = true;
     const sound = new Audio('sound.mp3');
@@ -510,40 +511,17 @@
     }
 
     function toggleZombieMode() {
+      count++;
+
       // Sprawdzamy, czy obrazek już jest na stronie
       let existingZombie = document.querySelector('.zombie');
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
       let existingButtonEvent = document.querySelector('.buttonEvent');
-            
-      // Jeśli obrazek istnieje, usuwamy go
-      if (existingZombie) {
-        existingZombie.classList.remove('show');
-        existingZombie.classList.add('hide');
-
-        existingButtonFirst.classList.remove('show');
-        existingButtonFirst.classList.add('hide');
-
-        existingButtonSecond.classList.remove('show');
-        existingButtonSecond.classList.add('hide');
-
-        existingButtonThird.classList.remove('show');
-        existingButtonThird.classList.add('hide');
-        
-        if (existitngButtonEvent) {
-          existingButtonEvent.classList.remove('show');
-          exsistingButtonEvent.classList.add('hide');
-        }
-
-        setTimeout(() => {
-          existingZombie.remove();
-          existingButtonFirst.remove();
-          existingButtonSecond.remove();
-          existingButtonThird.remove();
-          existingButtonEvent.remove();
-        }, 2100);
-      } else {
+      
+      if (count % 2 === 1) {
+        //po pierwszym włączeniu - włączenie
         // Tworzymy nowy element obrazka
         let zombieDiv = document.createElement('div');
         let buttonFirstDiv = document.createElement('div');
@@ -600,6 +578,32 @@
             }
           });
         });
+      } else {
+        //po drugim włączeniu - wyłączenie
+        existingZombie.classList.remove('show');
+        existingZombie.classList.add('hide');
+
+        existingButtonFirst.classList.remove('show');
+        existingButtonFirst.classList.add('hide');
+
+        existingButtonSecond.classList.remove('show');
+        existingButtonSecond.classList.add('hide');
+
+        existingButtonThird.classList.remove('show');
+        existingButtonThird.classList.add('hide');
+        
+        if (existitngButtonEvent) {
+          existingButtonEvent.classList.remove('show');
+          exsistingButtonEvent.classList.add('hide');
+        }
+
+        setTimeout(() => {
+          existingZombie.remove();
+          existingButtonFirst.remove();
+          existingButtonSecond.remove();
+          existingButtonThird.remove();
+          existingButtonEvent.remove();
+        }, 2100);
       }
     }
 
