@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -530,9 +530,11 @@
 
         existingButtonThird.classList.remove('show');
         existingButtonThird.classList.add('hide');
-
-        existingButtonEvent.classList.remove('show');
-        existingButtonEvent.classList.add('hide');
+        
+        if (existingButtonEvent) {
+          existingButtonEvent.classList.remove('show');
+          existingButtonEvent.classList.add('hide');
+        }
 
         setTimeout(() => {
           existingZombie.remove();
@@ -671,7 +673,8 @@
 
           existingButtonThird.classList.remove('hide');
           existingButtonThird.classList.add('show');
-        }, 2000);
+          existingButtonEvent.remove();
+        }, 1500);
       });
     }
 
