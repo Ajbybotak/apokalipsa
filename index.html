@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -515,7 +515,7 @@
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
-      let existingButtonEvent = document.querySelector('.buttonEvent');
+      // let existingButtonEvent = document.querySelector('.buttonEvent');
             
       // Jeśli obrazek istnieje, usuwamy go
       if (existingZombie) {
@@ -531,9 +531,9 @@
         existingButtonThird.classList.remove('show');
         existingButtonThird.classList.add('hide');
         
-        if (existingButtonEvent) {
-          existingButtonEvent.classList.remove('show');
-          existingButtonEvent.classList.add('hide');
+        if (buttonEventDiv) {
+          buttonEventDiv.classList.remove('show');
+          buttonEventDiv.classList.add('hide');
         }
 
         setTimeout(() => {
@@ -541,7 +541,7 @@
           existingButtonFirst.remove();
           existingButtonSecond.remove();
           existingButtonThird.remove();
-          existingButtonEvent.remove();
+          buttonEventDiv.remove();
         }, 2100);
       } else {
         // Tworzymy nowy element obrazka
@@ -549,12 +549,12 @@
         let buttonFirstDiv = document.createElement('div');
         let buttonSecondDiv = document.createElement('div');
         let buttonThirdDiv = document.createElement('div');
-        let buttonEventDiv = document.createElement('div');
+        // let buttonEventDiv = document.createElement('div');
         zombieDiv.classList.add('zombie');
         buttonFirstDiv.classList.add('zombie-button-first');
         buttonSecondDiv.classList.add('zombie-button-second');
         buttonThirdDiv.classList.add('zombie-button-third');
-        buttonEventDiv.classList.add('buttonEvent');
+        // buttonEventDiv.classList.add('buttonEvent');
                 
         // Lista dostępnych obrazków
         let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
@@ -570,13 +570,13 @@
         document.body.appendChild(buttonFirstDiv);
         document.body.appendChild(buttonSecondDiv);
         document.body.appendChild(buttonThirdDiv);
-        document.body.appendChild(buttonEventDiv);
+        // document.body.appendChild(buttonEventDiv);
 
         void zombieDiv.offsetWidth;
         void buttonFirstDiv.offsetWidth;
         void buttonSecondDiv.offsetWidth;
         void buttonThirdDiv.offsetWidth;
-        void buttonEventDiv.offsetWidth;
+        // void buttonEventDiv.offsetWidth;
 
         zombieDiv.classList.add('show');
         buttonFirstDiv.classList.add('show');
@@ -638,7 +638,12 @@
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
-      let existingButtonEvent = document.querySelector('.buttonEvent');
+      // let existingButtonEvent = document.querySelector('.buttonEvent');
+      let buttonEventDiv = document.createElement('.buttonEvent');
+      buttonEventDiv.classList.add('buttonEvent');
+      document.body.appendChild(buttonEventDiv);
+      void buttonEventDiv.offsetWidth;
+      buttonEventDiv.classList.add('show');
 
       existingButtonFirst.classList.remove('show');
       existingButtonFirst.classList.add('hide');
@@ -649,20 +654,20 @@
       existingButtonThird.classList.remove('show');
       existingButtonThird.classList.add('hide');
 
-      existingButtonEvent.classList.remove('hide');
-      existingButtonEvent.classList.add('show');
+      // existingButtonEvent.classList.remove('hide');
+      // existingButtonEvent.classList.add('show');
 
       const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
 
       let indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
 
-      const buttonEvent = document.querySelector('.buttonEvent');
-      if (buttonEvent) buttonEvent.textContent = possibleTextsEvent[indexEvent]
+      const buttonEventDiv = document.querySelector('.buttonEvent');
+      if (buttonEventDiv) buttonEventDiv.textContent = possibleTextsEvent[indexEvent]
 
-      buttonEvent.addEventListener('click', () => {
+      buttonEventDiv.addEventListener('click', () => {
         // kod
-        existingButtonEvent.classList.remove('show');
-        existingButtonEvent.classList.add('hide');
+        ButtonEventDiv.classList.remove('show');
+        ButtonEventDiv.classList.add('hide');
 
         setTimeout(() => {
           existingButtonFirst.classList.remove('hide');
@@ -673,7 +678,7 @@
 
           existingButtonThird.classList.remove('hide');
           existingButtonThird.classList.add('show');
-          existingButtonEvent.remove();
+          ButtonEventDiv.remove();
         }, 1500);
       });
     }
