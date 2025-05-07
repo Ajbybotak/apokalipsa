@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -580,17 +580,17 @@
         });
       } else {
         //po drugim włączeniu - wyłączenie
-        existingZombie.classList.remove('show');
-        existingZombie.classList.add('hide');
+        zombieDiv.classList.remove('show');
+        zombieDiv.classList.add('hide');
 
-        existingButtonFirst.classList.remove('show');
-        existingButtonFirst.classList.add('hide');
+        buttonFirstDiv.classList.remove('show');
+        buttonFirstDiv.classList.add('hide');
 
-        existingButtonSecond.classList.remove('show');
-        existingButtonSecond.classList.add('hide');
+        buttonSecondDiv.classList.remove('show');
+        buttonSecondDiv.classList.add('hide');
 
-        existingButtonThird.classList.remove('show');
-        existingButtonThird.classList.add('hide');
+        buttonThirdDiv.classList.remove('show');
+        buttonThirdDiv.classList.add('hide');
         
         if (existitngButtonEvent) {
           existingButtonEvent.classList.remove('show');
@@ -598,10 +598,10 @@
         }
 
         setTimeout(() => {
-          existingZombie.remove();
-          existingButtonFirst.remove();
-          existingButtonSecond.remove();
-          existingButtonThird.remove();
+          zombieDiv.remove();
+          buttonFirstDiv.remove();
+          buttonSecondDiv.remove();
+          buttonThirdDiv.remove();
           existingButtonEvent.remove();
         }, 2100);
       }
