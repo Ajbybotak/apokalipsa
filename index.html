@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -549,12 +549,12 @@
         let buttonFirstDiv = document.createElement('div');
         let buttonSecondDiv = document.createElement('div');
         let buttonThirdDiv = document.createElement('div');
-        // let buttonEventDiv = document.createElement('div');
+        //let buttonEventDiv = document.createElement('div');
         zombieDiv.classList.add('zombie');
         buttonFirstDiv.classList.add('zombie-button-first');
         buttonSecondDiv.classList.add('zombie-button-second');
         buttonThirdDiv.classList.add('zombie-button-third');
-        // buttonEventDiv.classList.add('buttonEvent');
+        //buttonEventDiv.classList.add('buttonEvent');
                 
         // Lista dostępnych obrazków
         let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
@@ -570,13 +570,13 @@
         document.body.appendChild(buttonFirstDiv);
         document.body.appendChild(buttonSecondDiv);
         document.body.appendChild(buttonThirdDiv);
-        // document.body.appendChild(buttonEventDiv);
+        //document.body.appendChild(buttonEventDiv);
 
         void zombieDiv.offsetWidth;
         void buttonFirstDiv.offsetWidth;
         void buttonSecondDiv.offsetWidth;
         void buttonThirdDiv.offsetWidth;
-        // void buttonEventDiv.offsetWidth;
+        //void buttonEventDiv.offsetWidth;
 
         zombieDiv.classList.add('show');
         buttonFirstDiv.classList.add('show');
@@ -654,8 +654,8 @@
       existingButtonThird.classList.remove('show');
       existingButtonThird.classList.add('hide');
 
-      // existingButtonEvent.classList.remove('hide');
-      // existingButtonEvent.classList.add('show');
+      existingButtonEvent.classList.remove('hide');
+      existingButtonEvent.classList.add('show');
 
       const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
 
@@ -679,7 +679,7 @@
 
           existingButtonThird.classList.remove('hide');
           existingButtonThird.classList.add('show');
-          existingButtonEvent.remove();
+          //existingButtonEvent.remove();
         }, 1800);
       });
     }
