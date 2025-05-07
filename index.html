@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -199,7 +199,7 @@
     .buttonEvent.show {
       transform: translateY(0px);
       animation: buttonEventShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
-      animation-delay: 2s;
+      animation-delay: 2.1s;
     }
 
     @keyframes buttonEventShow {
@@ -656,6 +656,21 @@
 
       const buttonEvent = document.querySelector('.buttonEvent');
       if (buttonEvent) buttonEvent.textContent = possibleTextsEvent[indexEvent]
+
+      buttonEvent.addEventListener('click', () => {
+        // kod
+        existingButtonFirst.classList.remove('hide');
+        existingButtonFirst.classList.add('show');
+
+        existingButtonSecond.classList.remove('hide');
+        existingButtonSecond.classList.add('show');
+
+        existingButtonThird.classList.remove('hide');
+        existingButtonThird.classList.add('show');
+
+        existingButtonEvent.classList.remove('show');
+        existingButtonEvent.classList.add('hide');
+      });
     }
 
 
