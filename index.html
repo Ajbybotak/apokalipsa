@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -532,8 +532,6 @@
 
       if (count % 2 === 1) {
         console.log(1);
-        let zombieDiv = document.createElement('div');
-        zombieDiv.classList.add('zombie');
         
         let randomImage = zombieImages[Math.floor(Math.random() * zombieImages.length)];
         
@@ -596,7 +594,7 @@
         buttonThirdDiv.classList.add('hide');
 
         setTimeout(() => {
-          zombieDiv.remove();
+          //zombieDiv.remove();
           buttonFirstDiv.remove();
           buttonSecondDiv.remove();
           buttonThirdDiv.remove();
