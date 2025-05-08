@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -530,11 +530,6 @@
     function toggleZombieMode() {
       count++;
 
-      zombieDiv.classList.remove('zombie');
-      setTimeout(() => {
-        zombieDiv.classList.add('zombie');
-      }, 100);
-
       if (count % 2 === 1) {
         console.log(1);
         
@@ -548,9 +543,11 @@
         document.body.appendChild(buttonThirdDiv);
         //document.body.appendChild(buttonEventDiv);
 
-        zombieDiv.classList.remove('show');
         zombieDiv.classList.remove('hide');
-        zombieDiv.classList.add('show');
+        zombieDiv.classList.remove('show');
+        setTimeout(() => {
+          zombieDiv.classList.add('show');
+        }, 100);  // Czas na "wyczyszczenie" animacji
 
         buttonFirstDiv.classList.remove('hide');
         buttonFirstDiv.classList.add('show');
