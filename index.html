@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -638,6 +638,8 @@
       countEvent++;
       console.log(countEvent);
 
+      document.body.appendChild(buttonEventDiv);
+
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
@@ -647,8 +649,7 @@
       document.body.appendChild(buttonEventDiv);
       void buttonEventDiv.offsetWidth;
       buttonEventDiv.classList.add('show'); */
-      document.body.appendChild(buttonEventDiv);
-
+      
       existingButtonFirst.classList.remove('show');
       existingButtonFirst.classList.add('hide');
 
