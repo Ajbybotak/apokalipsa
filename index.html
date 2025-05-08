@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -199,7 +199,6 @@
     .buttonEvent.show {
       transform: translateY(0px);
       animation: buttonEventShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
-      animation-delay: 2.1s;
     }
 
     @keyframes buttonEventShow {
@@ -657,11 +656,10 @@
       existingButtonThird.classList.remove('show');
       existingButtonThird.classList.add('hide');
 
-      existingButtonEvent.classList.remove('hide');
-      existingButtonEvent.classList.add('show');
-
       setTimeout(() => {
         document.body.appendChild(buttonEventDiv);
+        existingButtonEvent.classList.remove('hide');
+        existingButtonEvent.classList.add('show');
       }, 2100);
 
       const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
