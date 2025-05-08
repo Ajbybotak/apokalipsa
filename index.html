@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -680,6 +680,9 @@
 
     function buttonListener() {
       let existingButtonEvent = document.querySelector('.buttonEvent');
+      let existingButtonFirst = document.querySelector('.zombie-button-first');
+      let existingButtonSecond = document.querySelector('.zombie-button-second');
+      let existingButtonThird = document.querySelector('.zombie-button-third');
       countEvent++;
       console.log(countEvent);
       console.log('3 miejsce');
