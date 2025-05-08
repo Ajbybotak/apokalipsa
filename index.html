@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -543,6 +543,7 @@
         document.body.appendChild(buttonThirdDiv);
         //document.body.appendChild(buttonEventDiv);
 
+        zombieDiv.classList.remove('show');
         zombieDiv.classList.remove('hide');
         zombieDiv.classList.add('show');
 
