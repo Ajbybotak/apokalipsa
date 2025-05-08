@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -632,7 +632,7 @@
       const shakeInterval = setInterval(() => {
         // Wygeneruj losowe przesunięcia
         const x = (Math.random() - 0.5) * intensity - 40;
-        const y = (Math.random() - 0.5) * intensity - 45;
+        const y = (Math.random() - 0.5) * intensity * 1.5 - 45;
 
         zombieDiv.style.right = `${x}px`;
         zombieDiv.style.bottom = `${y}px`;
