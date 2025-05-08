@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -577,6 +577,7 @@
           existingButtonEvent.classList.add('hide');
           countEvent++;
           console.log(countEvent);
+          console.log('1 miejsce');
         }
 
 
@@ -637,6 +638,7 @@
     function zombieEvent() {
       countEvent++;
       console.log(countEvent);
+      console.log('2 miejsce');
 
       document.body.appendChild(buttonEventDiv);
 
@@ -676,6 +678,7 @@
         // kod
         countEvent++;
         console.log(countEvent);
+        console.log('3 miejsce');
 
         existingButtonEvent.classList.remove('show');
         existingButtonEvent.classList.add('hide');
