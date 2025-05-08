@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -733,6 +733,11 @@
       console.log('3 miejsce');
       existingButtonEvent.classList.remove('show');
       existingButtonEvent.classList.add('hide');
+      
+      setTimeout(() => {
+        existingButtonEvent.style.opacity = 0;
+      }, 1500)
+
       setTimeout(() => {
         existingButtonFirst.classList.remove('hide');
         existingButtonFirst.classList.add('show');
@@ -741,7 +746,6 @@
         existingButtonThird.classList.remove('hide');
         existingButtonThird.classList.add('show');
         //existingButtonEvent.remove();
-        existingButtonEvent.style.opacity = 0;
       }, 1800);
     }
 
