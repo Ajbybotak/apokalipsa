@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -49,24 +49,28 @@
     }
 
     .zombie.show {
-      transform: translateX(250px);
+      /*transform: translateX(250px);*/
+      right: -290px;
       animation: zombieShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
     @keyframes zombieShow {
       to {
-        transform: translateX(0);
+        /*transform: translateX(0);*/
+        right: -40px;
       }
     }
 
     .zombie.hide {
-      transform: translateX(0px);
+      /*transform: translateX(0px);*/
+      right: -40px;
       animation: zombieHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
     }
 
     @keyframes zombieHide {
       to {
-        transform: translateX(250px);
+        /*transform: translateX(250px);*/
+        right: -290px;
       }
     }
 
@@ -623,11 +627,11 @@
         const x = (Math.random() - 0.5) * intensity - 45;
         const y = (Math.random() - 0.5) * intensity - 40;
 
-        //zombie.style.right = `${x}px`;
-        //zombie.style.bottom = `${y}px`;
+        zombie.style.right = `${x}px`;
+        zombie.style.bottom = `${y}px`;
 
-        zombie.style.transform = `translateX(${x}px)`;
-        zombie.style.transform = `translateY(${y}px)`;
+        //zombie.style.transform = `translateX(${x}px)`;
+        //zombie.style.transform = `translateY(${y}px)`;
       
         // Zwiększ lub zmniejsz intensywność
         if (growing) {
