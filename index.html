@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -40,8 +40,8 @@
       right: -40px;
       width: 216px;
       height: 420px;
-      transition: transform 0.05s ease;
-      will-change: transform;
+      transition: bottom 0.05s ease, right 0.05s ease;
+      will-change: bottom, right;
       background-size: cover;
       background-position: center;
       outline: 2px solid red;
@@ -532,6 +532,8 @@
 
       if (count % 2 === 1) {
         console.log(1);
+        let zombieDiv = document.createElement('div');
+        zombieDiv.classList.add('zombie');
         
         let randomImage = zombieImages[Math.floor(Math.random() * zombieImages.length)];
         
