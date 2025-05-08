@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -641,7 +641,9 @@
           intensity -= 0.5;
           if (intensity <= 0) {
             clearInterval(shakeInterval);
-            zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
+            //zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
+            zombie.style.bottom = '-45px';
+            zombie.style.right = '-40px';
             console.log('zombieShake done');
           }
         }
