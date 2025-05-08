@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -660,36 +660,36 @@
         document.body.appendChild(buttonEventDiv);
         existingButtonEvent.classList.remove('hide');
         existingButtonEvent.classList.add('show');
-      }, 2100);
+      
+        const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
 
-      const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
+        let indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
 
-      let indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
+        /* const existingButtonEvent = document.querySelector('.buttonEvent');
+        if (buttonEventDiv) */
+        existingButtonEvent.textContent = possibleTextsEvent[indexEvent]
 
-      /* const existingButtonEvent = document.querySelector('.buttonEvent');
-      if (buttonEventDiv) */
-      existingButtonEvent.textContent = possibleTextsEvent[indexEvent]
+        existingButtonEvent.addEventListener('click', () => {
+          // kod
+          countEvent++;
+          console.log(countEvent);
 
-      existingButtonEvent.addEventListener('click', () => {
-        // kod
-        countEvent++;
-        console.log(countEvent);
+          existingButtonEvent.classList.remove('show');
+          existingButtonEvent.classList.add('hide');
 
-        existingButtonEvent.classList.remove('show');
-        existingButtonEvent.classList.add('hide');
+          setTimeout(() => {
+            existingButtonFirst.classList.remove('hide');
+            existingButtonFirst.classList.add('show');
 
-        setTimeout(() => {
-          existingButtonFirst.classList.remove('hide');
-          existingButtonFirst.classList.add('show');
+            existingButtonSecond.classList.remove('hide');
+            existingButtonSecond.classList.add('show');
 
-          existingButtonSecond.classList.remove('hide');
-          existingButtonSecond.classList.add('show');
-
-          existingButtonThird.classList.remove('hide');
-          existingButtonThird.classList.add('show');
-          //existingButtonEvent.remove();
+            existingButtonThird.classList.remove('hide');
+            existingButtonThird.classList.add('show');
+            //existingButtonEvent.remove();
         }, 1800);
       });
+      }, 2100);
     }
 
 
