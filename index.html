@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -505,6 +505,7 @@
     buttonEventDiv.classList.add('buttonEvent');
     let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
     //let existingButtonEvent = document.querySelector('.buttonEvent');
+    document.body.appendChild(zombieDiv);
 
     function toggleFilmMode() {
       showBonus = !showBonus;
@@ -537,7 +538,7 @@
         
         zombieDiv.style.backgroundImage = `url('${randomImage}')`;
         
-        document.body.appendChild(zombieDiv);
+        //document.body.appendChild(zombieDiv);
         document.body.appendChild(buttonFirstDiv);
         document.body.appendChild(buttonSecondDiv);
         document.body.appendChild(buttonThirdDiv);
