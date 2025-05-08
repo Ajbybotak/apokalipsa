@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -493,7 +493,7 @@
     let buttonFirstDiv = document.createElement('div');
     let buttonSecondDiv = document.createElement('div');
     let buttonThirdDiv = document.createElement('div');
-    //let buttonEventDiv = document.createElement('div');
+    let buttonEventDiv = document.createElement('div');
     zombieDiv.classList.add('zombie');
     buttonFirstDiv.classList.add('zombie-button-first');
     buttonSecondDiv.classList.add('zombie-button-second');
@@ -538,7 +538,7 @@
         document.body.appendChild(buttonFirstDiv);
         document.body.appendChild(buttonSecondDiv);
         document.body.appendChild(buttonThirdDiv);
-        //document.body.appendChild(buttonEventDiv);
+        document.body.appendChild(buttonEventDiv);
 
         zombieDiv.classList.remove('hide');
         zombieDiv.classList.add('show');
