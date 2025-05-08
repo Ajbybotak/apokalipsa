@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -499,6 +499,7 @@
     buttonSecondDiv.classList.add('zombie-button-second');
     buttonThirdDiv.classList.add('zombie-button-third');
     buttonEventDiv.classList.add('buttonEvent');
+    let existingButtonEvent = document.querySelector('.buttonEvent');
 
     function toggleFilmMode() {
       showBonus = !showBonus;
@@ -637,7 +638,7 @@
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
-      let existingButtonEvent = document.querySelector('.buttonEvent');
+      //let existingButtonEvent = document.querySelector('.buttonEvent');
       /* let buttonEventDiv = document.createElement('.buttonEvent');
       buttonEventDiv.classList.add('buttonEvent');
       document.body.appendChild(buttonEventDiv);
