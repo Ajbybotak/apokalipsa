@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -658,6 +658,8 @@
 
       setTimeout(() => {
         document.body.appendChild(buttonEventDiv);
+
+        setTimeout(() => {
         existingButtonEvent.classList.remove('hide');
         existingButtonEvent.classList.add('show');
       
@@ -689,6 +691,7 @@
             //existingButtonEvent.remove();
         }, 1800);
       });
+      }, 15)
       }, 2100);
     }
 
