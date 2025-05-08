@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -680,7 +680,7 @@
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
       let existingButtonEvent = document.querySelector('.buttonEvent');
-      existingButtonEvent.style.opacity = 1;
+      
       /* let buttonEventDiv = document.createElement('.buttonEvent');
       buttonEventDiv.classList.add('buttonEvent');
       document.body.appendChild(buttonEventDiv);
@@ -696,6 +696,9 @@
       existingButtonThird.classList.remove('show');
       existingButtonThird.classList.add('hide');
 
+      setInterval(() => {
+        existingButtonEvent.style.opacity = 1;
+      }, 2100)
       existingButtonEvent.classList.remove('hide');
       existingButtonEvent.classList.add('show');
 
@@ -736,9 +739,7 @@
         existingButtonThird.classList.remove('hide');
         existingButtonThird.classList.add('show');
         //existingButtonEvent.remove();
-        setTimeout(() => {
-          existingButtonEvent.style.opacity = 0;
-        }, 300)
+        existingButtonEvent.style.opacity = 0;
       }, 1800);
     }
 
