@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -578,6 +578,7 @@
           countEvent++;
           console.log(countEvent);
           console.log('1 miejsce');
+          existingButtonEvent.removeEventListener('click', buttonListener);
         }
 
 
@@ -674,27 +675,24 @@
       if (buttonEventDiv) */
       existingButtonEvent.textContent = possibleTextsEvent[indexEvent]
 
-      existingButtonEvent.addEventListener('click', () => {
-        // kod
-        countEvent++;
-        console.log(countEvent);
-        console.log('3 miejsce');
+      existingButtonEvent.addEventListener('click', buttonListener, {once: true});
+    }
 
-        existingButtonEvent.classList.remove('show');
-        existingButtonEvent.classList.add('hide');
-
-        setTimeout(() => {
-          existingButtonFirst.classList.remove('hide');
-          existingButtonFirst.classList.add('show');
-
-          existingButtonSecond.classList.remove('hide');
-          existingButtonSecond.classList.add('show');
-
-          existingButtonThird.classList.remove('hide');
-          existingButtonThird.classList.add('show');
-          //existingButtonEvent.remove();
-        }, 1800);
-      }, {once: true});
+    function buttonListener() {
+      countEvent++;
+      console.log(countEvent);
+      console.log('3 miejsce');
+      existingButtonEvent.classList.remove('show');
+      existingButtonEvent.classList.add('hide');
+      setTimeout(() => {
+        existingButtonFirst.classList.remove('hide');
+        existingButtonFirst.classList.add('show');
+        existingButtonSecond.classList.remove('hide');
+        existingButtonSecond.classList.add('show');
+        existingButtonThird.classList.remove('hide');
+        existingButtonThird.classList.add('show');
+        //existingButtonEvent.remove();
+      }, 1800);
     }
 
 
