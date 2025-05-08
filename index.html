@@ -489,12 +489,12 @@
     let muted = true;
     const sound = new Audio('sound.mp3');
     sound.loop = true; // opcjonalnie – jeśli chcesz pętlę
-    //let zombieDiv = document.createElement('div');
+    let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
     let buttonSecondDiv = document.createElement('div');
     let buttonThirdDiv = document.createElement('div');
     let buttonEventDiv = document.createElement('div');
-    //zombieDiv.classList.add('zombie');
+    zombieDiv.classList.add('zombie');
     buttonFirstDiv.classList.add('zombie-button-first');
     buttonSecondDiv.classList.add('zombie-button-second');
     buttonThirdDiv.classList.add('zombie-button-third');
@@ -525,8 +525,6 @@
 
     function toggleZombieMode() {
       count++;
-      let zombieDiv = document.createElement('div');
-      zombieDiv.classList.add('zombie');
 
       if (count % 2 === 1) {
         console.log(1);
