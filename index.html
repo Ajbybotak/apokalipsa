@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -529,6 +529,11 @@
 
     function toggleZombieMode() {
       count++;
+
+      zombieDiv.classList.remove('zombie');
+      setTimeout(() => {
+        zombieDiv.classList.add('zombie');
+      }, 100);
 
       if (count % 2 === 1) {
         console.log(1);
