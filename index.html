@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -679,6 +679,7 @@
     }
 
     function buttonListener() {
+      let existingButtonEvent = document.querySelector('.buttonEvent');
       countEvent++;
       console.log(countEvent);
       console.log('3 miejsce');
