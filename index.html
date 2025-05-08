@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -577,6 +577,9 @@
           console.log(countEvent);
           console.log('1 miejsce');
           existingButtonEvent.removeEventListener('click', buttonListener);
+          setTimeout(() => {
+            existingButtonEvent.style.opacity = 0;
+          }, 1500)
         }
 
         const buttons = document.querySelectorAll('.zombie-button-first, .zombie-button-second, .zombie-button-third');
@@ -619,7 +622,7 @@
         zombieShake();
         setTimeout(() => {
           zombieEvent(); // wywołanie funkcji event()
-        }, 450)
+        }, 420)
       }
     }
 
@@ -676,6 +679,7 @@
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
       let existingButtonEvent = document.querySelector('.buttonEvent');
+      existingButtonEvent.style.opacity = 1;
       /* let buttonEventDiv = document.createElement('.buttonEvent');
       buttonEventDiv.classList.add('buttonEvent');
       document.body.appendChild(buttonEventDiv);
@@ -723,6 +727,7 @@
       console.log('3 miejsce');
       existingButtonEvent.classList.remove('show');
       existingButtonEvent.classList.add('hide');
+      existingButtonEvent.style.opacity = 0;
       setTimeout(() => {
         existingButtonFirst.classList.remove('hide');
         existingButtonFirst.classList.add('show');
