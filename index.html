@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -615,20 +615,20 @@
     }
 
     function zombieShake() {
-      const zombie = document.querySelector('.zombie');
+      //const zombie = document.querySelector('.zombie');
       console.log('zombieShake start');
-      if (!zombie) return;
+      //if (!zombie) return;
 
       let intensity = 1;
       let growing = true;
 
       const shakeInterval = setInterval(() => {
         // Wygeneruj losowe przesunięcia
-        const x = (Math.random() - 0.5) * intensity - 45;
-        const y = (Math.random() - 0.5) * intensity - 40;
+        const x = (Math.random() - 0.5) * intensity - 40;
+        const y = (Math.random() - 0.5) * intensity - 45;
 
-        zombie.style.right = `${x}px`;
-        zombie.style.bottom = `${y}px`;
+        zombieDiv.style.right = `${x}px`;
+        zombieDiv.style.bottom = `${y}px`;
 
         //zombie.style.transform = `translateX(${x}px)`;
         //zombie.style.transform = `translateY(${y}px)`;
@@ -642,8 +642,8 @@
           if (intensity <= 0) {
             clearInterval(shakeInterval);
             //zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
-            zombie.style.bottom = '-45px';
-            zombie.style.right = '-40px';
+            zombieDiv.style.bottom = '-45px';
+            zombieDiv.style.right = '-40px';
             console.log('zombieShake done');
           }
         }
