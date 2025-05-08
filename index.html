@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -557,16 +557,7 @@
         const buttons = document.querySelectorAll('.zombie-button-first, .zombie-button-second, .zombie-button-third');
 
         buttons.forEach(button => {
-          button.addEventListener('click', () => {
-            const chance = Math.random(); // losowa liczba od 0 do 1
-            if (chance < 0.5) {
-              // Nic się nie dzieje (50% szans)
-              zombieShake();
-            } else {
-              zombieShake();
-              zombieEvent(); // wywołanie funkcji event()
-            }
-          });
+          button.addEventListener('click', randomText);
         });
       } else {
         console.log(0);
@@ -581,7 +572,7 @@
           existingButtonEvent.removeEventListener('click', buttonListener);
         }
 
-
+        button.removeEventListener('click', randomText);
 
         zombieDiv.classList.remove('show');
         zombieDiv.classList.add('hide');
@@ -602,6 +593,17 @@
           buttonThirdDiv.remove();
           existingButtonEvent.remove();
         }, 2100);
+      }
+    }
+
+    function randomText() {
+      const chance = Math.random(); // losowa liczba od 0 do 1
+      if (chance < 0.5) {
+        // Nic się nie dzieje (50% szans)
+        zombieShake();
+      } else {
+        zombieShake();
+        zombieEvent(); // wywołanie funkcji event()
       }
     }
 
@@ -637,6 +639,7 @@
     }
 
     function zombieEvent() {
+      button.removeEventListener('click', randomText);
       countEvent++;
       console.log(countEvent);
       console.log('2 miejsce');
