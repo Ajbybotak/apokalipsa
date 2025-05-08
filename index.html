@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -199,6 +199,7 @@
     .buttonEvent.show {
       transform: translateY(0px);
       animation: buttonEventShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+      animation-delay: 2.1s;
     }
 
     @keyframes buttonEventShow {
@@ -646,6 +647,7 @@
       document.body.appendChild(buttonEventDiv);
       void buttonEventDiv.offsetWidth;
       buttonEventDiv.classList.add('show'); */
+      document.body.appendChild(buttonEventDiv);
 
       existingButtonFirst.classList.remove('show');
       existingButtonFirst.classList.add('hide');
@@ -656,43 +658,39 @@
       existingButtonThird.classList.remove('show');
       existingButtonThird.classList.add('hide');
 
-      setTimeout(() => {
-        document.body.appendChild(buttonEventDiv);
+      existingButtonEvent.classList.remove('hide');
+      existingButtonEvent.classList.add('show');
+
+    
+
+      const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
+
+      let indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
+
+      /* const existingButtonEvent = document.querySelector('.buttonEvent');
+      if (buttonEventDiv) */
+      existingButtonEvent.textContent = possibleTextsEvent[indexEvent]
+
+      existingButtonEvent.addEventListener('click', () => {
+        // kod
+        countEvent++;
+        console.log(countEvent);
+
+        existingButtonEvent.classList.remove('show');
+        existingButtonEvent.classList.add('hide');
 
         setTimeout(() => {
-        existingButtonEvent.classList.remove('hide');
-        existingButtonEvent.classList.add('show');
-      
-        const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
+          existingButtonFirst.classList.remove('hide');
+          existingButtonFirst.classList.add('show');
 
-        let indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
+          existingButtonSecond.classList.remove('hide');
+          existingButtonSecond.classList.add('show');
 
-        /* const existingButtonEvent = document.querySelector('.buttonEvent');
-        if (buttonEventDiv) */
-        existingButtonEvent.textContent = possibleTextsEvent[indexEvent]
-
-        existingButtonEvent.addEventListener('click', () => {
-          // kod
-          countEvent++;
-          console.log(countEvent);
-
-          existingButtonEvent.classList.remove('show');
-          existingButtonEvent.classList.add('hide');
-
-          setTimeout(() => {
-            existingButtonFirst.classList.remove('hide');
-            existingButtonFirst.classList.add('show');
-
-            existingButtonSecond.classList.remove('hide');
-            existingButtonSecond.classList.add('show');
-
-            existingButtonThird.classList.remove('hide');
-            existingButtonThird.classList.add('show');
-            //existingButtonEvent.remove();
+          existingButtonThird.classList.remove('hide');
+          existingButtonThird.classList.add('show');
+          //existingButtonEvent.remove();
         }, 1800);
       });
-      }, 1000)
-      }, 2100);
     }
 
 
