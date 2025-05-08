@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -694,6 +694,12 @@
       let existingButtonFirst = document.querySelector('.zombie-button-first');
       let existingButtonSecond = document.querySelector('.zombie-button-second');
       let existingButtonThird = document.querySelector('.zombie-button-third');
+
+      const buttons = document.querySelectorAll('.zombie-button-first, .zombie-button-second, .zombie-button-third');
+
+        buttons.forEach(button => {
+          button.addEventListener('click', randomText);
+        });
       countEvent++;
       console.log(countEvent);
       console.log('3 miejsce');
