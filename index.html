@@ -21,7 +21,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -572,8 +572,8 @@
         //po drugim włączeniu - wyłączenie
         
         if (countEvent % 2 === 1) {
-          buttonEventDiv.classList.remove('show');
-          buttonEventDiv.classList.add('hide');
+          existingButtonEvent.classList.remove('show');
+          existingButtonEvent.classList.add('hide');
         }
 
 
