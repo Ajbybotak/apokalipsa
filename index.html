@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red  ;
     }
     .top-buttons {
       display: flex;
@@ -490,6 +490,7 @@
     
     let count = 0;
     let countEvent = 0;
+    let chanceGood = 0.5;
     let showBonus = false;
     let muted = true;
     const sound = new Audio('sound.mp3');
@@ -710,7 +711,7 @@
       const possibleTextsEventBad = ['zły1', 'zły2', 'zły3', 'zły4'];
 
       const chance = Math.random();
-      if(chance < 0.5) {
+      if(chance < chanceGood) {
         let indexEvent = Math.floor(Math.random() * possibleTextsEventGood.length);
         existingButtonEvent.textContent = possibleTextsEventGood[indexEvent]
       } else {
@@ -832,6 +833,11 @@
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
       } else {
+        if (code === 'BL') {
+          chanceGood = 1;
+        } else {
+          chanceGood = 0;
+        }
         output.textContent = 'Nieprawidłowy kod';
       }
     }
