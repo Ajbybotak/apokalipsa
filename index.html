@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -706,13 +706,17 @@
 
     
 
-      const possibleTextsEvent = ['krowa', 'jabłko', 'banan', 'gruszka'];
+      const possibleTextsEventGood = ['dobry1', 'dobry2', 'dobry3', 'dobry4'];
+      const possibleTextsEventBad = ['zły1', 'zły2', 'zły3', 'zły4'];
 
-      let indexEvent = Math.floor(Math.random() * possibleTextsEvent.length);
-
-      /* const existingButtonEvent = document.querySelector('.buttonEvent');
-      if (buttonEventDiv) */
-      existingButtonEvent.textContent = possibleTextsEvent[indexEvent]
+      const chance = Math.random();
+      if(chance < 0.5) {
+        let indexEvent = Math.floor(Math.random() * possibleTextsEventGood.length);
+        existingButtonEvent.textContent = possibleTextsEventGood[indexEvent]
+      } else {
+        let indexEvent = Math.floor(Math.random() * possibleTextsEventBad.length);
+        existingButtonEvent.textContent = possibleTextsEventBad[indexEvent]
+      }
 
       existingButtonEvent.addEventListener('click', buttonListener, {once: true});
     }
