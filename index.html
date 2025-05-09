@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -700,7 +700,7 @@
 
       setInterval(() => {
         existingButtonEvent.style.opacity = 1;
-      }, 2100)
+      }, 1800)
       existingButtonEvent.classList.remove('hide');
       existingButtonEvent.classList.add('show');
 
@@ -737,7 +737,7 @@
       setTimeout(() => {
         existingButtonEvent.style.opacity = 0;
         existingButtonEvent.remove();
-      }, 1500)
+      }, 1800)
 
       setTimeout(() => {
         existingButtonFirst.classList.remove('hide');
