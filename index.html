@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -247,6 +247,19 @@
       to {
         opacity: 1;
         transform: translateY(-40px) translateX(35px);
+      }
+    }
+
+    .icon-slide-down2 {
+      opacity: 1;
+      transform: translateY(-40px) translateX(35px);
+      animation: slideDown2 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
+    }
+
+    @keyframes slideDown2 {
+      to {
+        opacity: 1;
+        transform: translateY(-40px) translateX(235px);
       }
     }
 
@@ -512,7 +525,18 @@
 
     function toggleFilmMode() {
       showBonus = !showBonus;
-      document.getElementById('main-title').textContent = showBonus ? 'Bonusowy film:' : 'Liczniki punktów:';
+
+      document.querySelector('h1').classList.remove('icon-slide-down');
+      document.querySelector('h1').classList.add('icon-slide-down2');
+
+      setTimeout(() => {
+          document.getElementById('main-title').textContent = showBonus ? 'Bonusowy film:' : 'Liczniki punktów:';
+          document.querySelector('h1').classList.remove('icon-slide-down2');
+          document.querySelector('h1').classList.add('icon-slide-down');
+        }, 1500)
+
+
+      //document.getElementById('main-title').textContent = showBonus ? 'Bonusowy film:' : 'Liczniki punktów:';
       document.getElementById('bonus-section').style.display = showBonus ? 'flex' : 'none';
       document.getElementById('counters').style.display = showBonus ? 'none' : 'flex';
       document.querySelector('.reset-death-container').style.display = showBonus ? 'none' : 'flex';
