@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -273,6 +273,19 @@
       to {
         opacity: 1;
         transform: translateY(-50px) translateX(0);
+      }
+    }
+
+    .icon-slide-left2 {
+      opacity: 1;
+      transform: translateY(-50px) translateX(0px);
+      animation: slideLeft2 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
+    }
+
+    @keyframes slideLeft2 {
+      to {
+        opacity: 1;
+        transform: translateY(-50px) translateX(500px);
       }
     }
 
@@ -536,9 +549,18 @@
         }, 1500)
 
 
+      if (showBonus === true) {
+        document.querySelector('.counters').classList.remove('icon-slide-left');
+        document.querySelector('.counters').classList.add('icon-slide-left2');
+      } else {
+        document.querySelector('.counters').classList.remove('icon-slide-left2');
+        document.querySelector('.counters').classList.add('icon-slide-left');
+      }
+
+
       //document.getElementById('main-title').textContent = showBonus ? 'Bonusowy film:' : 'Liczniki punktów:';
       document.getElementById('bonus-section').style.display = showBonus ? 'flex' : 'none';
-      document.getElementById('counters').style.display = showBonus ? 'none' : 'flex';
+      //document.getElementById('counters').style.display = showBonus ? 'none' : 'flex';
       document.querySelector('.reset-death-container').style.display = showBonus ? 'none' : 'flex';
       document.getElementById('death-message').style.display = 'none';
     }
