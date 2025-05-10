@@ -579,6 +579,8 @@
     function toggleFilmMode() {
       showBonus = !showBonus;
 
+      const codeInput = document.querySelector('.code-input');
+
       document.querySelector('h1').classList.remove('icon-slide-down');
       document.querySelector('h1').classList.add('icon-slide-down2');
 
@@ -593,12 +595,12 @@
         document.querySelector('.counters').classList.remove('icon-slide-left');
         document.querySelector('.counters').classList.add('icon-slide-left2');
 
-        document.querySelector('.code-input').classList.remove('show2');
-        document.querySelector('.code-input').classList.add('show');
+        codeInput.classList.remove('show2');
+        codeInput.classList.add('show');
       } else {
 
-        document.querySelector('.code-input').classList.remove('show');
-        document.querySelector('.code-input').classList.add('show2');
+        codeInput.classList.remove('show');
+        codeInput.classList.add('show2');
         setTimeout(() => {
           document.querySelector('.counters').classList.remove('icon-slide-left2');
           document.querySelector('.counters').classList.add('icon-slide-left');
