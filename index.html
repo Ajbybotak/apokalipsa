@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -976,7 +976,7 @@
       const codeInputDiv = document.getElementById('codeInputDiv');
       const output = document.querySelector('.codeOutputDiv');
       
-      const code = codeInputDiv.textContent;  // Pobieramy wartość z input
+      const code = codeInputDiv.value;  // Pobieramy wartość z input
       //codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
       console.log(code);
       console.log('aktualizacja');
