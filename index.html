@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -592,12 +592,12 @@
         document.querySelector('.counters').classList.remove('icon-slide-left');
         document.querySelector('.counters').classList.add('icon-slide-left2');
 
-        document.querySelector('.code-input').classList.remove('input-show2');
-        document.querySelector('.code-input').classList.add('input-show');
+        document.querySelector('code-input').classList.remove('input-show2');
+        document.querySelector('code-input').classList.add('input-show');
       } else {
 
-        document.querySelector('.code-input').classList.remove('input-show');
-        document.querySelector('.code-input').classList.add('input-show2');
+        document.querySelector('code-input').classList.remove('input-show');
+        document.querySelector('code-input').classList.add('input-show2');
         setTimeout(() => {
           document.querySelector('.counters').classList.remove('icon-slide-left2');
           document.querySelector('.counters').classList.add('icon-slide-left');
