@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -625,7 +625,7 @@
       let codeInputDiv = document.createElement('div');
       codeInputDiv.classList.add('code-input');
       document.body.appendChild(codeInputDiv);
-      codeInputDiv.id = 'codeInputDiv';
+      codeInputDiv.id = 'codeInputDiv2';
 
       //const codeInput = document.querySelector('.code-input');
 
@@ -1078,7 +1078,7 @@
       3. Wpisuj litery które widzisz po kolei.<br>
       4. Obejrzyj bonusowy film!
     </div>
-    <input type="text" id="codeInputDiv" class="code-input" contenteditable="true" oninput="checkCode()" placeholder="Tu wpisz kod..." />
+    <input type="text" id="codeInputDiv2" class="code-input" contenteditable="true" oninput="checkCode()" placeholder="Tu wpisz kod..." />
     <div id="codeOutputDiv" class="code-output"></div>
   </div>
 </body>
