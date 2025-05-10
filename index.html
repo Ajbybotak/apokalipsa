@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -972,13 +972,15 @@
     }
 
     function checkCode() {
-      const code = codeInputDiv.textContent;
+      const codeInputDiv = document.getElementById('codeInputDiv');
+      const output = document.querySelector('.codeOutputDiv');
+      
       codeInputDiv.addEventListener('input', function() {
-        code = codeInputDiv.textContent;  // Pobieramy wartość z input
-        codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
+        const code = codeInputDiv.textContent.trim();  // Pobieramy wartość z input
+        //codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
         console.log(code);
       });
-      const output = document.querySelector('.codeOutputDiv');
+      
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
       } else {
