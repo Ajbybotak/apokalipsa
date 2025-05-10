@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -595,8 +595,10 @@
         document.querySelector('.counters').classList.remove('icon-slide-left');
         document.querySelector('.counters').classList.add('icon-slide-left2');
 
-        codeInput.classList.remove('show2');
-        codeInput.classList.add('show');
+        setTimeout(() => {
+          codeInput.classList.remove('show2');
+          codeInput.classList.add('show');
+        }, 1500)
       } else {
 
         codeInput.classList.remove('show');
