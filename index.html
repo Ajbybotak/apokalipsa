@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -831,6 +831,7 @@
       codeInputDiv.addEventListener('input', function() {
         const code = codeInput.value;  // Pobieramy wartość z input
         codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
+        console.log(code);
       });
       
       if (code === 'BL') {
@@ -959,6 +960,7 @@
       codeInputDiv.addEventListener('input', function() {
         const code = codeInput.value;  // Pobieramy wartość z input
         codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
+        console.log(code);
       });
 
       const output = document.getElementById('.code-output');
