@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -972,12 +972,12 @@
     }
 
     function checkCode() {
+      const code = codeInputDiv.textContent;
       codeInputDiv.addEventListener('input', function() {
-        const code = codeInputDiv.textContent;  // Pobieramy wartość z input
+        code = codeInputDiv.textContent;  // Pobieramy wartość z input
         codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
         console.log(code);
       });
-      const code = codeInputDiv.textContent;
       const output = document.querySelector('.codeOutputDiv');
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
@@ -1063,7 +1063,7 @@
       3. Wpisuj litery które widzisz po kolei.<br>
       4. Obejrzyj bonusowy film!
     </div>
-    <input type="text" class="code-input" oninput="checkCode()" placeholder="Tu wpisz kod..." />
+    <input type="text" class="codeInputDiv" contenteditable="true" oninput="checkCode()" placeholder="Tu wpisz kod..." />
     <div class="codeOutputDiv"></div>
   </div>
 </body>
