@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -839,7 +839,7 @@
       const possibleTextsEventBad = ['zły1', 'zły2', 'zły3', 'zły4'];
 
       const chance = Math.random();
-
+      const code = codeInputDiv.textContent;
       codeInputDiv.addEventListener('input', function() {
         const code = codeInputDiv.textContent;  // Pobieramy wartość z input
         codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
@@ -974,7 +974,7 @@
         codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
         console.log(code);
       });
-
+      const code = codeInputDiv.textContent;
       const output = document.querySelector('.codeOutputDiv');
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
