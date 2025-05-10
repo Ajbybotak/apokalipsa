@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -622,10 +622,10 @@
     function toggleFilmMode() {
       showBonus = !showBonus;
 
-      let codeInputDiv = document.createElement('div');
+      /*let codeInputDiv = document.createElement('div');
       codeInputDiv.classList.add('code-input');
       document.body.appendChild(codeInputDiv);
-      codeInputDiv.id = 'codeInputDiv2';
+      codeInputDiv.id = 'codeInputDiv2';*/
 
       //const codeInput = document.querySelector('.code-input');
 
@@ -644,13 +644,18 @@
         document.querySelector('.counters').classList.add('icon-slide-left2');
 
         setTimeout(() => {
-          codeInputDiv.classList.remove('show2');
-          codeInputDiv.classList.add('show');
+          /*codeInputDiv.classList.remove('show2');
+          codeInputDiv.classList.add('show');*/
+          document.querySelector('.code-input').classList.remove('show2');
+          document.querySelector('.code-input').classList.add('show');
         }, 1500)
       } else {
 
-        codeInputDiv.classList.remove('show');
-        codeInputDiv.classList.add('show2');
+        /*codeInputDiv.classList.remove('show');
+        codeInputDiv.classList.add('show2');*/
+        document.querySelector('.code-input').classList.remove('show');
+        document.querySelector('.code-input').classList.add('show2');
+
         setTimeout(() => {
           document.querySelector('.counters').classList.remove('icon-slide-left2');
           document.querySelector('.counters').classList.add('icon-slide-left');
