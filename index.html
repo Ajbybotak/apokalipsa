@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid green;
     }
     .top-buttons {
       display: flex;
@@ -975,18 +975,15 @@
       const codeInputDiv = document.getElementById('codeInputDiv');
       const output = document.querySelector('.codeOutputDiv');
       
-      codeInputDiv.addEventListener('input', function() {
-        const code = codeInputDiv.textContent;  // Pobieramy wartość z input
-        //codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
-        console.log(code);
-        console.log('aktualizacja');
-
-        if (code === 'abc') {
-          output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
-        } else {
-          output.textContent = 'Nieprawidłowy kod';
-        }
-      });
+      const code = codeInputDiv.textContent;  // Pobieramy wartość z input
+      //codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
+      console.log(code);
+      console.log('aktualizacja');
+      if (code === 'abc') {
+        output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
+      } else {
+        output.textContent = 'Nieprawidłowy kod';
+      }
     }
 
     function rollDice(btn) {
