@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -562,7 +562,13 @@
 
     .code-output {
       transform: translateY(20px);
+      position: absolute;
+      width: 315px;
+      height: 150px;
       font-size: 30px;
+      opacity: 1;
+      display: flex;
+      visibility: visible;
     }
   </style>
   <script>
@@ -588,9 +594,13 @@
     buttonEventDiv.classList.add('buttonEvent');
     codeInputDiv.classList.add('code-input');
     codeOutputDiv.classList.add('code-output');
+    codeOutputDiv.style.display = flex;
+    codeOutputDiv.style.visibility = visible;
+    codeOutputDiv.style.opacity = 1;
     codeInputDiv.style.display = flex;
     codeInputDiv.style.visibility = visible;
     codeInputDiv.style.opacity = 1;
+    const code = codeInputDiv.value;
     let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
     existingButtonEvent.style.opacity = 0;
     //let existingButtonEvent = document.querySelector('.buttonEvent');
@@ -965,7 +975,7 @@
         console.log(code);
       });
 
-      const output = document.getElementById('codeOutputDiv');
+      const output = document.querySelector('.codeOutputDiv');
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
       } else {
