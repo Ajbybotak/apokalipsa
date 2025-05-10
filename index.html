@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -574,7 +574,10 @@
     buttonSecondDiv.classList.add('zombie-button-second');
     buttonThirdDiv.classList.add('zombie-button-third');
     buttonEventDiv.classList.add('buttonEvent');
-    codeInputDiv.classList.add('.code-input');
+    codeInputDiv.classList.add('code-input');
+    codeInputDiv.style.display = flex;
+    codeInputDiv.style.visibility = visible;
+    codeInputDiv.style.opacity = 1;
     let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
     existingButtonEvent.style.opacity = 0;
     //let existingButtonEvent = document.querySelector('.buttonEvent');
