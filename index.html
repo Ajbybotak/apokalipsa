@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -624,6 +624,7 @@
 
       let codeInputDiv = document.createElement('div');
       codeInputDiv.classList.add('code-input');
+      document.body.appendChild(codeInputDiv);
       codeInputDiv.id = 'codeInputDiv';
 
       //const codeInput = document.querySelector('.code-input');
