@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -520,6 +520,32 @@
       font-weight: bold;
     }
 
+    .input-show {
+      opacity: 1;
+      transform: translateX(300px);
+      animation: inputShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    @keyframes inputShow {
+      to {
+        opacity: 1;
+        transform: translateX(-5px);
+      }
+    }
+
+    .input-show2 {
+      opacity: 1;
+      transform: translateX(-5px);
+      animation: inputHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
+    }
+
+    @keyframes inputHide {
+      to {
+        opacity: 1;
+        transform: translateX(300px);
+      }
+    }
+
     #code-output {
       transform: translateY(20px);
       font-size: 30px;
@@ -565,8 +591,13 @@
       if (showBonus === true) {
         document.querySelector('.counters').classList.remove('icon-slide-left');
         document.querySelector('.counters').classList.add('icon-slide-left2');
+
+        document.querySelector('.code-input').classList.remove('input-show2');
+        document.querySelector('.code-input').classList.add('input-show');
       } else {
 
+        document.querySelector('.code-input').classList.remove('input-show');
+        document.querySelector('.code-input').classList.add('input-show2');
         setTimeout(() => {
           document.querySelector('.counters').classList.remove('icon-slide-left2');
           document.querySelector('.counters').classList.add('icon-slide-left');
