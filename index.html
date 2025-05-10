@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -521,6 +521,16 @@
       opacity: 1;
       display: flex;
       visibility: visible;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      background-color: #f9f9f9;
+      transition: all 0.3 ease;
+    }
+
+    .code-input:focus {
+      border-color: #007bff;
+      background-color: #fff;
     }
 
     .code-input.show {
