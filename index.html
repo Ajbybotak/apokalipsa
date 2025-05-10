@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -594,6 +594,7 @@
     buttonEventDiv.classList.add('buttonEvent');
     codeInputDiv.classList.add('code-input');
     codeInputDiv.id = 'codeInputDiv';
+    codeOutputDiv.id = 'codeOutputDiv';
     codeOutputDiv.classList.add('code-output');
     codeOutputDiv.style.display = flex;
     codeOutputDiv.style.visibility = visible;
@@ -974,12 +975,11 @@
 
     function checkCode() {
       const codeInputDiv = document.getElementById('codeInputDiv');
-      const output = document.querySelector('.codeOutputDiv');
+      const output = document.getElementById('codeOutputDiv');
       
       const code = codeInputDiv.value;  // Pobieramy wartość z input
       //codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
       console.log(code);
-      console.log('aktualizacja');
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
       } else {
@@ -1065,7 +1065,7 @@
       4. Obejrzyj bonusowy film!
     </div>
     <input type="text" id="codeInputDiv" class="code-input" contenteditable="true" oninput="checkCode()" placeholder="Tu wpisz kod..." />
-    <div class="code-output"></div>
+    <div id="codeOutputDiv" class="code-output"></div>
   </div>
 </body>
 </html>
