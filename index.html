@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -513,7 +513,8 @@
     }
 
     .code-input {
-      transform: translateY(10px) translateX(-5px);
+      transform: translateY(10px) translateX(300px);
+      position: absolute;
       width: 315px;
       height: 50px;
       font-size: 33px;
@@ -827,7 +828,7 @@
 
       const chance = Math.random();
 
-      const code = document.getElementById('.code-input').value;
+      const code = document.getElementById('.codeInputDiv').value;
       
       if (code === 'BL') {
           chanceGood = 1;
@@ -952,7 +953,7 @@
     }
 
     function checkCode() {
-      const code = document.getElementById('.code-input').value;
+      const code = document.getElementById('.codeInputDiv').value;
       const output = document.getElementById('.code-output');
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
