@@ -502,7 +502,7 @@
       max-width: 330px;
       transform: translateY(40px) translateX(-125px);
       position: absolute;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     #bonus-instruction {
       text-align: left;
@@ -998,7 +998,7 @@
     }
 
     function checkCode() {
-      const codeInputDiv = document.getElementById('codeInputDiv');
+      const codeInputDiv = document.querySelector('.code-input')
       const output = document.getElementById('codeOutputDiv');
       
       const code = codeInputDiv.value;  // Pobieramy wartość z input
