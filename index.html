@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -560,7 +560,7 @@
       }
     }
 
-    #code-output {
+    .code-output {
       transform: translateY(20px);
       font-size: 30px;
     }
@@ -580,12 +580,14 @@
     let buttonThirdDiv = document.createElement('div');
     let buttonEventDiv = document.createElement('div');
     let codeInputDiv = document.createElement('div');
+    let codeOutputDiv = document.createElement('div');
     zombieDiv.classList.add('zombie');
     buttonFirstDiv.classList.add('zombie-button-first');
     buttonSecondDiv.classList.add('zombie-button-second');
     buttonThirdDiv.classList.add('zombie-button-third');
     buttonEventDiv.classList.add('buttonEvent');
     codeInputDiv.classList.add('code-input');
+    codeOutputDiv.classList.add('code-output');
     codeInputDiv.style.display = flex;
     codeInputDiv.style.visibility = visible;
     codeInputDiv.style.opacity = 1;
@@ -963,7 +965,7 @@
         console.log(code);
       });
 
-      const output = document.getElementById('.code-output');
+      const output = document.getElementById('codeOutputDiv');
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">kliknij tutaj</a>';
       } else {
