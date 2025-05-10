@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -584,6 +584,32 @@
       visibility: visible;
       outline: 2px solid blue;
     }
+
+    .code-output.show {
+      opacity: 1;
+      transform: translateX(400px) translateY(190px);
+      animation: outputShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    @keyframes outputShow {
+      to {
+        opacity: 1;
+        transform: translateX(0px) translateY(190px);
+      }
+    }
+
+    .code-output.show2 {
+      opacity: 1;
+      transform: translateX(0px) translateY(190px);
+      animation: outputHide 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    @keyframes outputHide {
+      to {
+        opacity: 1;
+        transform: translateX(400px) translateY(190px);
+      }
+    }
   </style>
   <script>
     
@@ -653,6 +679,9 @@
           codeInputDiv.classList.add('show');*/
           document.querySelector('.code-input').classList.remove('show2');
           document.querySelector('.code-input').classList.add('show');
+
+          document.querySelector('.code-output').classList.remove('show2');
+          document.querySelector('.code-output').classList.add('show');
         }, 1500)
       } else {
 
@@ -660,6 +689,9 @@
         codeInputDiv.classList.add('show2');*/
         document.querySelector('.code-input').classList.remove('show');
         document.querySelector('.code-input').classList.add('show2');
+
+        document.querySelector('.code-output').classList.remove('show');
+        document.querySelector('.code-output').classList.add('show2');
 
         setTimeout(() => {
           document.querySelector('.counters').classList.remove('icon-slide-left2');
