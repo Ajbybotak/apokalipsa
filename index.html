@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -353,6 +353,7 @@
       outline: 2px solid red;
       font-size: 30px;
       font-weight: bold;
+      color: white;
       text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;
     }
 
@@ -1164,7 +1165,7 @@
     <button onclick="toggleMute(this)">🔇</button>
     <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">⚀</button>
     <button class="zombie-icon" onclick="toggleZombieMode()"></button>
-    <button class="save-icon" onclick="toggleCrownMode()">3</button>
+    <button class="save-icon" id="zwyciestwo" onclick="updateValue('zwyciestwo', -1, 0, 99)">3</button>
   </div>
 
   <h1 id="main-title" class="icon-slide-down">Liczniki punktów:</h1>
