@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -351,6 +351,9 @@
       transform: translateY(-35px) translateX(5px);
       position: relative;
       outline: 2px solid red;
+      font-size: 30px;
+      font-weight: bold;
+      text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;
     }
 
     .counters {
@@ -1078,6 +1081,7 @@
       document.getElementById('glod').textContent = 10;
       document.getElementById('zycie').textContent = 10;
       document.getElementById('doswiadczenie').textContent = 0;
+      document.querySelector('.save-icon').textContent = 3;
     }
 
     function smierc() {
@@ -1085,6 +1089,7 @@
       document.getElementById('glod').textContent = getRandom();
       document.getElementById('zycie').textContent = getRandom();
       document.getElementById('doswiadczenie').textContent = getRandom();
+      document.querySelector('.save-icon').textContent = (parseInt(document.querySelector('.save-icon').textContent) - 1).toString();
 
       const msg = document.getElementById('death-message');
       let seconds = 10;
@@ -1156,7 +1161,7 @@
     <button onclick="toggleMute(this)">🔇</button>
     <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">⚀</button>
     <button class="zombie-icon" onclick="toggleZombieMode()"></button>
-    <button class="save-icon" onclick="toggleCrownMode()"></button>
+    <button class="save-icon" onclick="toggleCrownMode()">3</button>
   </div>
 
   <h1 id="main-title" class="icon-slide-down">Liczniki punktów:</h1>
