@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -389,6 +389,33 @@
       font-weight: bold;
       outline: 2px solid red;
     }
+    
+    .reset-death-container.show {
+      opacity: 1;
+      transform: translateX(400px) translateY(0px);
+      animation: deathShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
+    }
+
+    @keyframes deathShow {
+      to {
+        opacity: 1;
+        transform: translateX(0px) translateY(0px);
+      }
+    }
+
+    .reset-death-container.show2 {
+      opacity: 1;
+      transform: translateX(0px) translateY(0px);
+      animation: deathHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
+    }
+
+    @keyframes deathHide {
+      to {
+        opacity: 1;
+        transform: translateX(400px) translateY(0px);
+      }
+    }
+    
     .reset-death-container button {
       font-size: 30px;
       padding: 5px 15px;
@@ -602,7 +629,7 @@
     }
 
     .code-output {
-      transform: translateY(190px);
+      transform: translateY(180px);
       position: absolute;
       width: 900px;
       height: 450px;
@@ -615,27 +642,27 @@
 
     .code-output.show {
       opacity: 1;
-      transform: translateX(400px) translateY(190px);
+      transform: translateX(400px) translateY(180px);
       animation: outputShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
     @keyframes outputShow {
       to {
         opacity: 1;
-        transform: translateX(0px) translateY(190px);
+        transform: translateX(0px) translateY(180px);
       }
     }
 
     .code-output.show2 {
       opacity: 1;
-      transform: translateX(0px) translateY(190px);
+      transform: translateX(0px) translateY(180px);
       animation: outputHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
     }
 
     @keyframes outputHide {
       to {
         opacity: 1;
-        transform: translateX(400px) translateY(190px);
+        transform: translateX(400px) translateY(180px);
       }
     }
   </style>
@@ -713,11 +740,17 @@
 
           document.querySelector('.bonus-instruction').classList.remove('show2');
           document.querySelector('.bonus-instruction').classList.add('show');
+          
+          document.querySelector('.reset-death-container').classList.remove('show2');
+          document.querySelector('.reset-death-container').classList.add('show');
         }, 1500)
       } else {
 
         /*codeInputDiv.classList.remove('show');
         codeInputDiv.classList.add('show2');*/
+        document.querySelector('.reset-death-container').classList.remove('show');
+        document.querySelector('.reset-death-container').classList.add('show2');
+        
         document.querySelector('.code-input').classList.remove('show');
         document.querySelector('.code-input').classList.add('show2');
 
