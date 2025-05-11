@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -526,7 +526,7 @@
     }
 
     .code-input {
-      transform: translateY(125px) translateX(400px);
+      transform: translateY(115px) translateX(400px);
       position: absolute;
       width: 315px;
       height: 50px;
@@ -549,27 +549,27 @@
 
     .code-input.show {
       opacity: 1;
-      transform: translateX(400px) translateY(125px);
+      transform: translateX(400px) translateY(115px);
       animation: inputShow 1.5s cubic-bezier(0.1, 0.7, 0.1, 1) forwards;
     }
 
     @keyframes inputShow {
       to {
         opacity: 1;
-        transform: translateX(0px) translateY(125px);
+        transform: translateX(0px) translateY(115px);
       }
     }
 
     .code-input.show2 {
       opacity: 1;
-      transform: translateX(0px) translateY(125px);
+      transform: translateX(0px) translateY(115px);
       animation: inputHide 1.5s cubic-bezier(0.7, 0.1, 1, 0.1) forwards;
     }
 
     @keyframes inputHide {
       to {
         opacity: 1;
-        transform: translateX(400px) translateY(125px);
+        transform: translateX(400px) translateY(115px);
       }
     }
 
