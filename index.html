@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -712,7 +712,7 @@
           document.querySelector('.code-output').classList.add('show');
 
           document.querySelector('.bonus-instruction').classList.remove('show2');
-          document.querySelector('.cbonus-instruction').classList.add('show');
+          document.querySelector('.bonus-instruction').classList.add('show');
         }, 1500)
       } else {
 
@@ -725,7 +725,7 @@
         document.querySelector('.code-output').classList.add('show2');
 
         document.querySelector('.bonus-instruction').classList.remove('show');
-        document.querySelector('.cbonus-instruction').classList.add('show2');
+        document.querySelector('.bonus-instruction').classList.add('show2');
 
         setTimeout(() => {
           document.querySelector('.counters').classList.remove('icon-slide-left2');
