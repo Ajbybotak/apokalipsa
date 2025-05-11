@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -922,7 +922,7 @@
       existingButtonThird.classList.remove('show');
       existingButtonThird.classList.add('hide');
 
-      setInterval(() => {
+      setTimeout(() => {
         existingButtonEvent.style.opacity = 1;
       }, 1800)
       existingButtonEvent.classList.remove('hide');
@@ -944,8 +944,10 @@
       
       if (code === 'BL') {
           chanceGood = 1;
+          console.log(chanceGood);
         } else {
           chanceGood = 0;
+          console.log(chanceGood);
         }
 
       if(chance < chanceGood) {
