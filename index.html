@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -345,7 +345,7 @@
       outline: 2px solid red;
       z-index: 11;
     }
-    .top-buttons .save-icon {
+    .top-buttons .crown-icon {
       background-image: url('redcrown.png');
       background-size: 50px;        /* Dopasuj do rozmiaru przycisku */
       background-repeat: no-repeat;
@@ -1089,7 +1089,7 @@
       document.getElementById('glod').textContent = 10;
       document.getElementById('zycie').textContent = 10;
       document.getElementById('doswiadczenie').textContent = 0;
-      document.querySelector('.save-icon').textContent = 3;
+      document.querySelector('.crown-icon').textContent = 3;
     }
 
     function smierc() {
@@ -1097,7 +1097,7 @@
       document.getElementById('glod').textContent = getRandom();
       document.getElementById('zycie').textContent = getRandom();
       document.getElementById('doswiadczenie').textContent = getRandom();
-      document.querySelector('.save-icon').textContent = (parseInt(document.querySelector('.save-icon').textContent) - 1).toString();
+      document.querySelector('.crown-icon').textContent = (parseInt(document.querySelector('.crown-icon').textContent) - 1).toString();
 
       const msg = document.getElementById('death-message');
       let seconds = 10;
@@ -1133,6 +1133,11 @@
         } else {
           chanceGood = 0;
           console.log(chanceGood);
+          if (code === 'blue') {
+            document.querySelector('.crown-icon').style.backgroundImage = `url('bluecrown.png')`;
+          } else {
+            document.querySelector('.crown-icon').style.backgroundImage = `url('redcrown.png')`;
+          }
         }
         output.textContent = 'Nieprawidłowy kod';
       }
@@ -1169,7 +1174,7 @@
     <button onclick="toggleMute(this)">🔇</button>
     <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">⚀</button>
     <button class="zombie-icon" onclick="toggleZombieMode()"></button>
-    <button class="save-icon" id="zwyciestwo" onclick="updateValue('zwyciestwo', 1, 0, 99)">3</button>
+    <button class="crown-icon" id="zwyciestwo" onclick="updateValue('zwyciestwo', 1, 0, 99)">3</button>
   </div>
 
   <h1 id="main-title" class="icon-slide-down">Liczniki punktów:</h1>
