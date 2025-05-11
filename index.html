@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -341,6 +341,18 @@
       position: relative;
       outline: 2px solid red;
     }
+    .top-buttons .save-icon {
+      background-image: url('redcrown.png');
+      background-size: 50px;        /* Dopasuj do rozmiaru przycisku */
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 50px;
+      height: 50px;
+      transform: translateY(-35px) translateX(5px);
+      position: relative;
+      outline: 2px solid red;
+    }
+
     .counters {
       display: flex;
       flex-direction: column;
@@ -786,6 +798,7 @@
       }
     }
 
+
     function toggleZombieMode() {
       count++;
 
@@ -1143,6 +1156,7 @@
     <button onclick="toggleMute(this)">🔇</button>
     <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">⚀</button>
     <button class="zombie-icon" onclick="toggleZombieMode()"></button>
+    <button class="save-icon" onclick="toggleCrownMode()"></button>
   </div>
 
   <h1 id="main-title" class="icon-slide-down">Liczniki punktów:</h1>
