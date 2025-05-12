@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -1197,7 +1197,7 @@
       return ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'][n - 1];
     }
 
-    window.onload = function() {
+    document.addEventListener('DOMContentLoaded', () => {
       const diceBtn = document.getElementById('dice-btn');
       diceBtn.textContent = diceUnicode(Math.floor(Math.random() * 6) + 1);
       console.log('odswiezenie');
@@ -1219,7 +1219,7 @@
         localStorage.setItem('test', '123');
         console.log(localStorage.getItem('test'));
       }, 100);
-    }
+    });
   </script>
 </head>
 <body>
