@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -1131,6 +1131,10 @@
           clearInterval(interval);
         }
       }, 1000);
+    }
+
+    function save() {
+      console.log(document.getElementById('bron').value);
     }
 
     function checkCode() {
