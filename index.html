@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -1145,6 +1145,11 @@
       localStorage.setItem('zyc', document.getElementById('zycie').textContent);
       localStorage.setItem('dos', document.getElementById('doswiadczenie').textContent);
       localStorage.setItem('zwy', document.getElementById('zwyciestwo').textContent);
+      console.log(localStorage.getItem('bro'));
+      console.log(localStorage.getItem('glo'));
+      console.log(localStorage.getItem('zyc'));
+      console.log(localStorage.getItem('dos'));
+      console.log(localStorage.getItem('zwy'));
     }
 
     function checkCode() {
