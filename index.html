@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -727,6 +727,12 @@
     zombieSound.autoplay = true;
     let vol = 1;
     zombieSound.volume = vol;
+    const coinSound = new Audio(`coin${Math.floor(Math.random() * 3) + 1}.wav`);
+    coinSound.load();
+    coinSound.preload = 'auto';
+    coinSound.autoplay = true;
+    let vol2 = 0.8;
+    coinSound.volume = vol2;
     let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
     let buttonSecondDiv = document.createElement('div');
@@ -765,10 +771,24 @@
       zombieSound.preload = 'auto';
       zombieSound.autoplay = true;
       zombieSound.volume = vol;
+      zombieSound.currentTime = 0;
      
       // Odtwarzamy dźwięk
       zombieSound.play();
     } 
+
+    function playRandomCoinSound() {
+      const coinSound = new Audio(`coin${Math.floor(Math.random() * 3) + 1}.wav`);
+
+      coinSound.load();
+      coinSound.preload = 'auto';
+      coinSound.autoplay = true;
+      coinSound.volume = vol2;
+      coinSound.currentTime = 0;
+     
+      // Odtwarzamy dźwięk
+      coinSound.play();
+    }
 
     function toggleFilmMode() {
       showBonus = !showBonus;
@@ -1150,8 +1170,12 @@
       value = Math.max(min, Math.min(max, value + delta));
       valueElem.textContent = value;
       storageCheck();
-      click.currentTime = 0;
-      click.play();
+      if (id === 'zwyciestwo', delta === 1) {
+        playRandomCoinSound();
+      } else {
+        click.currentTime = 0;
+        click.play();
+      }
     }
 
     function storageCheck() {
@@ -1249,11 +1273,14 @@
             if (code === 'mute') {
               click.volume = 0;
               vol = 0;
+              vol2 = 0;
             } else {
               if (code === 'noclicksounds') {
                 click.volume = 0;
+                vol2 = 0;
               } else {
                 click.volume = 0.8;
+                vol2 = 0.8;
                 if (code === 'nozombiesounds') {
                   vol = 0;
                 } else {
