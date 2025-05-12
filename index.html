@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -750,6 +750,25 @@
     //let existingButtonEvent = document.querySelector('.buttonEvent');
     //document.body.appendChild(zombieDiv);
 
+    function playRandomZombieSound() {
+     // Losuj liczbę od 1 do 15
+     const randomNumber = Math.floor(Math.random() * 15) + 1;
+     
+     // Konstrukcja URL do dźwięku
+     const soundUrl = `zombie${randomNumber}.mp3`;
+     
+     // Tworzymy nowy obiekt Audio
+     const zombieSound = new Audio(soundUrl);
+
+    zombieSound.load();
+    zombieSound.preload = 'auto';
+    zombieSound.autoplay = true;
+    zombieSound.volume = 1;
+     
+     // Odtwarzamy dźwięk
+     zombieSound.play();
+    } 
+
     function toggleFilmMode() {
       showBonus = !showBonus;
       click.currentTime = 0;
@@ -838,6 +857,7 @@
     }
 
     function changeZombieSkin() {
+      playRandomZombieSound();
       zombieShake();
       setTimeout(() => {
         let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
@@ -938,6 +958,7 @@
     }
 
     function randomText() {
+      playRandomZombieSound();
       click.currentTime = 0;
       click.play();
       const chance = Math.random(); // losowa liczba od 0 do 1
