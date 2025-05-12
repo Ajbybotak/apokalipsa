@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -725,8 +725,8 @@
     zombieSound.load();
     zombieSound.preload = 'auto';
     zombieSound.autoplay = true;
-    //let vol = 1;
-    zombieSound.volume = 1;
+    let vol = 1;
+    zombieSound.volume = vol;
     let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
     let buttonSecondDiv = document.createElement('div');
@@ -764,6 +764,7 @@
       zombieSound.load();
       zombieSound.preload = 'auto';
       zombieSound.autoplay = true;
+      zombieSound.volume = vol;
      
       // Odtwarzamy dźwięk
       zombieSound.play();
@@ -1250,9 +1251,9 @@
             } else {
               click.volume = 0.8;
               if (code === 'nozombiesound') {
-                zombieSound.volume = 0;
+                vol = 0;
               } else {
-                zombieSound.volume = 1;
+                vol = 1;
               }
             }
           }
