@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -1104,9 +1104,11 @@
     function storageCheck() {
       if(localStorage.getItem('bro') == document.getElementById('bron').textContent && localStorage.getItem('glo') == document.getElementById('glod').textContent && localStorage.getItem('zyc') == document.getElementById('zycie').textContent && localStorage.getItem('dos') == document.getElementById('doswiadczenie').textContent && localStorage.getItem('zwy') == document.getElementById('zwyciestwo').textContent) {
         //pokaż book.png
+        document.querySelector('.save-icon').style.backgroundImage = `url('book.png')`;
         console.log('wartosci rowne zapisanym');
       } else {
         //pokaż book2.png
+        document.querySelector('.save-icon').style.backgroundImage = `url('book2.png')`;
         console.log('wartosci rozne zapisanym');
       }
     }
