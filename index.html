@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -715,6 +715,7 @@
     let pauseTime = 0; // Zmienna przechowująca czas zatrzymania dźwięku
     const sound = new Audio('sound.mp3');
     const click = new Audio('click.mp3');
+    click.load();
     sound.loop = true; // opcjonalnie – jeśli chcesz pętlę
     let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
