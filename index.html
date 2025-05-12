@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -716,6 +716,8 @@
     const sound = new Audio('sound.mp3');
     const click = new Audio('click.mp3');
     click.load();
+    click.preload = 'auto';
+    click.autoplay = true;
     sound.loop = true; // opcjonalnie – jeśli chcesz pętlę
     let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
@@ -749,6 +751,7 @@
 
     function toggleFilmMode() {
       showBonus = !showBonus;
+      click.currentTime = 0;
       click.play();
 
       /*let codeInputDiv = document.createElement('div');
@@ -819,6 +822,7 @@
 
     function toggleMute(btn) {
       muted = !muted;
+      click.currentTime = 0;
       click.play();
       btn.textContent = muted ? '🔇' : '🔊';
 
@@ -834,6 +838,7 @@
 
     function changeZombieSkin() {
       zombieShake();
+      click.currentTime = 0;
       click.play();
       setTimeout(() => {
         let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
@@ -845,6 +850,7 @@
 
     function toggleZombieMode() {
       count++;
+      click.currentTime = 0;
       click.play();
 
       if (count % 2 === 1) {
@@ -933,6 +939,7 @@
     }
 
     function randomText() {
+      click.currentTime = 0;
       click.play();
       const chance = Math.random(); // losowa liczba od 0 do 1
       if (chance < 0.5) {
@@ -984,6 +991,7 @@
     }
 
     function zombieEvent() {
+      click.currentTime = 0;
       click.play();
       const buttons = document.querySelectorAll('.zombie-button-first, .zombie-button-second, .zombie-button-third');
 
@@ -1049,6 +1057,7 @@
     }
 
     function buttonListener() {
+      click.currentTime = 0;
       click.play();
       let existingButtonEvent = document.querySelector('.buttonEvent');
       let existingButtonFirst = document.querySelector('.zombie-button-first');
@@ -1122,6 +1131,7 @@
       value = Math.max(min, Math.min(max, value + delta));
       valueElem.textContent = value;
       storageCheck();
+      click.currentTime = 0;
       click.play();
     }
 
@@ -1144,6 +1154,7 @@
       document.getElementById('doswiadczenie').textContent = 0;
       document.querySelector('.crown-icon').textContent = 3;
       storageCheck();
+      click.currentTime = 0;
       click.play();
     }
 
@@ -1153,6 +1164,7 @@
       document.getElementById('zycie').textContent = getRandom();
       document.getElementById('doswiadczenie').textContent = getRandom();
       updateValue('zwyciestwo', -1, 0, 99)
+      click.currentTime = 0;
       click.play();
 
       const msg = document.getElementById('death-message');
@@ -1191,6 +1203,7 @@
       console.log(localStorage.getItem('dos'));
       console.log(localStorage.getItem('zwy'));
       storageCheck();
+      click.currentTime = 0;
       click.play();
     }
 
@@ -1223,6 +1236,7 @@
     function rollDice(btn) {
       let rolls = 15;
       let baseDelay = 50;
+      click.currentTime = 0;
       click.play();
 
       for (let i = 0; i < rolls; i++) {
