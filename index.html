@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -995,7 +995,7 @@
         // Zwiększ lub zmniejsz intensywność
         if (growing) {
           intensity += 0.5;
-          if (intensity >= 8) growing = false; // osiągnęliśmy maksimum
+          if (intensity >= 12) growing = false; // osiągnęliśmy maksimum
         } else {
           intensity -= 0.5;
           if (intensity <= 0) {
@@ -1006,7 +1006,7 @@
             console.log('zombieShake done');
           }
         }
-      }, 15);
+      }, 50);
     }
 
     function zombieEvent() {
