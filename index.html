@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -1246,20 +1246,26 @@
             document.querySelector('.crown-icon').style.backgroundImage = `url('bluecrown.png')`;
           } else {
             document.querySelector('.crown-icon').style.backgroundImage = `url('redcrown.png')`;
-            if (code === 'noclicksound') {
+            if (code === 'mute') {
               click.volume = 0;
+              vol = 0;
             } else {
-              click.volume = 0.8;
-              if (code === 'nozombiesound') {
-                vol = 0;
+              if (code === 'noclicksound') {
+                click.volume = 0;
               } else {
-                vol = 1;
+                click.volume = 0.8;
+                if (code === 'nozombiesound') {
+                  vol = 0;
+                } else {
+                  vol = 1;
+                
+                }
               }
             }
           }
         }
-        output.textContent = 'Nieprawidłowy kod';
       }
+        output.textContent = 'Nieprawidłowy kod';
     }
 
     function rollDice(btn) {
