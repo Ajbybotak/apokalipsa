@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -1175,7 +1175,7 @@
       value = Math.max(min, Math.min(max, value + delta));
       valueElem.textContent = value;
       storageCheck();
-      if (id === 'zwyciestwo', delta === 1) {
+      if (id === 'zwyciestwo' && delta === 1) {
         playRandomCoinSound();
       } else {
         click.currentTime = 0;
@@ -1301,16 +1301,71 @@
     }
 
     function rollDice(btn) {
-      click.currentTime = 0;
-      click.play();
+      /*click.currentTime = 0;
+      click.play();*/
       diceSound.volume = vol2;
       diceSound.currentTime = 0;
       diceSound.play();
       
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 67)
 
-      const roll = Math.floor(Math.random() * 6) + 1;
-      btn.textContent = diceUnicode(roll);
-      
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 133)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 233)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 333)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 467)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 633)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 800)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 933)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 1133)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 1467)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 2133)
+
+      setTimeout(() => {
+        const roll = Math.floor(Math.random() * 6) + 1;
+        btn.textContent = diceUnicode(roll);
+      }, 2833)
       
       /*let rolls = 15;
       let baseDelay = 50;
