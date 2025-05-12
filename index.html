@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -1201,11 +1201,13 @@
       const diceBtn = document.getElementById('dice-btn');
       diceBtn.textContent = diceUnicode(Math.floor(Math.random() * 6) + 1);
 
-      document.getElementById('bron').textContent = localStorage.getItem('bro');
-      document.getElementById('glod').textContent = localStorage.getItem('glo');
-      document.getElementById('zycie').textContent = localStorage.getItem('zyc');
-      document.getElementById('doswiadczenie').textContent = localStorage.getItem('dos');
-      document.getElementById('zwyciestwo').textContent = localStorage.getItem('zwy');
+      setTimeout(() => {
+        document.getElementById('bron').textContent = localStorage.getItem('bro');
+        document.getElementById('glod').textContent = localStorage.getItem('glo');
+        document.getElementById('zycie').textContent = localStorage.getItem('zyc');
+        document.getElementById('doswiadczenie').textContent = localStorage.getItem('dos');
+        document.getElementById('zwyciestwo').textContent = localStorage.getItem('zwy');
+      }, 100);
     }
   </script>
 </head>
