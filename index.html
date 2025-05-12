@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -1204,6 +1204,16 @@
       
 
       setTimeout(() => {
+
+        if (localStorage.getItem('bro') === null) {
+          // Przypisanie domyślnych wartości do localStorage za pierwszym załadowaniem
+          localStorage.setItem('bro', '1');
+          localStorage.setItem('glo', '10');
+          localStorage.setItem('zyc', '10');
+          localStorage.setItem('dos', '0');
+          localStorage.setItem('zwy', '3');
+        }
+
         document.getElementById('bron').textContent = localStorage.getItem('bro');
         document.getElementById('glod').textContent = localStorage.getItem('glo');
         document.getElementById('zycie').textContent = localStorage.getItem('zyc');
