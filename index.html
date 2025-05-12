@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -720,6 +720,11 @@
     click.autoplay = true;
     click.volume = 0.8;
     sound.loop = true; // opcjonalnie – jeśli chcesz pętlę
+    const zombieSound = new Audio(`zombie${Math.floor(Math.random() * 15) + 1}.mp3`);
+    zombieSound.load();
+    zombieSound.preload = 'auto';
+    zombieSound.autoplay = true;
+    zombieSound.volume = 1;
     let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
     let buttonSecondDiv = document.createElement('div');
@@ -751,22 +756,16 @@
     //document.body.appendChild(zombieDiv);
 
     function playRandomZombieSound() {
-     // Losuj liczbę od 1 do 15
-     const randomNumber = Math.floor(Math.random() * 15) + 1;
-     
-     // Konstrukcja URL do dźwięku
-     const soundUrl = `zombie${randomNumber}.mp3`;
-     
-     // Tworzymy nowy obiekt Audio
-     const zombieSound = new Audio(soundUrl);
+      // Tworzymy nowy obiekt Audio
+      const zombieSound = new Audio(`zombie${Math.floor(Math.random() * 15) + 1}.mp3`);
 
-    zombieSound.load();
-    zombieSound.preload = 'auto';
-    zombieSound.autoplay = true;
-    zombieSound.volume = 1;
+      zombieSound.load();
+      zombieSound.preload = 'auto';
+      zombieSound.autoplay = true;
+      zombieSound.volume = 1;
      
-     // Odtwarzamy dźwięk
-     zombieSound.play();
+      // Odtwarzamy dźwięk
+      zombieSound.play();
     } 
 
     function toggleFilmMode() {
