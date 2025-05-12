@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -1201,8 +1201,7 @@
       const diceBtn = document.getElementById('dice-btn');
       diceBtn.textContent = diceUnicode(Math.floor(Math.random() * 6) + 1);
 
-      localStorage.setItem('test', '123');
-      console.log(localStorage.getItem('test'));
+      
 
       setTimeout(() => {
         document.getElementById('bron').textContent = localStorage.getItem('bro');
@@ -1216,6 +1215,9 @@
         console.log(localStorage.getItem('zyc'));
         console.log(localStorage.getItem('dos'));
         console.log(localStorage.getItem('zwy'));
+
+        localStorage.setItem('test', '123');
+        console.log(localStorage.getItem('test'));
       }, 100);
     }
   </script>
