@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -714,6 +714,7 @@
     let muted = true;
     let pauseTime = 0; // Zmienna przechowująca czas zatrzymania dźwięku
     const sound = new Audio('sound.mp3');
+    const click = new Audio('click.mp3');
     sound.loop = true; // opcjonalnie – jeśli chcesz pętlę
     let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
@@ -747,6 +748,7 @@
 
     function toggleFilmMode() {
       showBonus = !showBonus;
+      click.play();
 
       /*let codeInputDiv = document.createElement('div');
       codeInputDiv.classList.add('code-input');
