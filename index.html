@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -828,6 +828,15 @@
       }
     }
 
+    function changeZombieSkin() {
+      zombieShake();
+      setTimeout(() => {
+        let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
+        let randomImage = zombieImages[Math.floor(Math.random() * zombieImages.length)];
+        zombieDiv.style.backgroundImage = `url('${randomImage}')`;
+      }, 210);
+    }
+
 
     function toggleZombieMode() {
       count++;
@@ -863,6 +872,7 @@
 
         addRandomTextToButton();
 
+        zombieDiv.addEventListener('click', changeZombieSkin);
         const buttons = document.querySelectorAll('.zombie-button-first, .zombie-button-second, .zombie-button-third');
 
         buttons.forEach(button => {
@@ -872,6 +882,7 @@
         console.log(0);
         //po drugim włączeniu - wyłączenie
         let existingButtonEvent = document.querySelector('.buttonEvent');
+        zombieDiv.removeEventListener('click', changeZombieSkin);
         if (countEvent % 2 === 1) {
           existingButtonEvent.classList.remove('show');
           existingButtonEvent.classList.add('hide');
