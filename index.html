@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -1223,7 +1223,7 @@
     <button onclick="toggleMute(this)">🔇</button>
     <button id="dice-btn" class="dice-icon" onclick="rollDice(this)">⚀</button>
     <button class="zombie-icon" onclick="toggleZombieMode()"></button>
-    <button class="crown-icon" id="zwyciestwo" onclick="updateValue('zwyciestwo', 1, 0, 99)">3</button>
+    <button class="crown-icon" id="zwyciestwo" onclick="updateValue('zwyciestwo', 1, 0, 99)"></button>
     <button class="save-icon" onclick="save()"></button>
   </div>
 
@@ -1233,25 +1233,25 @@
     <div class="counter">
       <span class="black">Broń</span>
       <button class="btn bron-minus" onclick="updateValue('bron', -1, 0, 20)"><span class="plus-text">-</span></button>
-      <div id="bron" class="value black">1</div>
+      <div id="bron" class="value black"></div>
       <button class="btn bron-plus" onclick="updateValue('bron', 1, 0, 20)"><span class="plus-text">+</span></button>
     </div>
     <div class="counter">
       <span class="green">Głód</span>
       <button class="btn glod-minus" onclick="updateValue('glod', -1, 0, 10)"><span class="plus-text">-</span></button>
-      <div id="glod" class="value green">10</div>
+      <div id="glod" class="value green"></div>
       <button class="btn glod-plus" onclick="updateValue('glod', 1, 0, 10)"><span class="plus-text">+</span></button>
     </div>
     <div class="counter">
       <span class="red">Życie</span>
       <button class="btn zycie-minus" onclick="updateValue('zycie', -1, 0, 10)"><span class="plus-text">-</span></button>
-      <div id="zycie" class="value red">10</div>
+      <div id="zycie" class="value red"></div>
       <button class="btn zycie-plus" onclick="updateValue('zycie', 1, 0, 10)"><span class="plus-text">+</span></button>
     </div>
     <div class="counter">
       <span class="blue">Doświadczenie</span>
       <button class="btn doswiadczenie-minus" onclick="updateValue('doswiadczenie', -1, 0, 20)"><span class="plus-text">-</span></button>
-      <div id="doswiadczenie" class="value blue">0</div>
+      <div id="doswiadczenie" class="value blue"></div>
       <button class="btn doswiadczenie-plus" onclick="updateValue('doswiadczenie', 1, 0, 20)"><span class="plus-text">+</span></button>
     </div>
   </div>
