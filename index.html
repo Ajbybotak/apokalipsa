@@ -22,13 +22,13 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: -5px;
+      top: 0px;
       left: 15px;
       gap: 5px;
       outline: 2px solid red;
@@ -93,6 +93,7 @@
       border-width: 5px;
       left: 5px;
       bottom: 245px;
+      z-index: 4;
     }
 
     .zombie-button-first.show {
@@ -135,6 +136,7 @@
       border-width: 5px;
       left: 5px;
       bottom: 125px;
+      z-index: 4;
     }
 
     .zombie-button-second.show {
@@ -167,6 +169,7 @@
       border-width: 5px;
       left: 5px;
       bottom: 5px;
+      z-index: 4;
     }
 
     .zombie-button-third.show {
@@ -706,7 +709,7 @@
     
     let count = 0;
     let countEvent = 0;
-    let chanceGood = 0.5;
+    let chanceGood = 0;
     let showBonus = false;
     let muted = true;
     let pauseTime = 0; // Zmienna przechowująca czas zatrzymania dźwięku
