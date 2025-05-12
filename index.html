@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -733,6 +733,11 @@
     coinSound.autoplay = true;
     let vol2 = 0.8;
     coinSound.volume = vol2;
+    const diceSound = new Audio(`dice.mp3`);
+    diceSound.load();
+    diceSound.preload = 'auto';
+    diceSound.autoplay = true;
+    diceSound.volume = vol2;
     let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
     let buttonSecondDiv = document.createElement('div');
@@ -1296,21 +1301,30 @@
     }
 
     function rollDice(btn) {
-      let rolls = 15;
-      let baseDelay = 50;
       click.currentTime = 0;
       click.play();
+      diceSound.volume = vol2;
+      diceSound.currentTime = 0;
+      diceSound.play();
+      
+
+      const roll = Math.floor(Math.random() * 6) + 1;
+      btn.textContent = diceUnicode(roll);
+      
+      
+      /*let rolls = 15;
+      let baseDelay = 50;
 
       for (let i = 0; i < rolls; i++) {
-      // Każde kolejne opóźnienie będzie większe (np. kwadratowo)
-      let delay = baseDelay * i * (i / 3 + 1);
+        // Każde kolejne opóźnienie będzie większe (np. kwadratowo)
+        let delay = baseDelay * i * (i / 3 + 1);
 
-      setTimeout(() => {
-        const roll = Math.floor(Math.random() * 6) + 1;
-        btn.textContent = diceUnicode(roll);
-      }, delay);
+        setTimeout(() => {
+          const roll = Math.floor(Math.random() * 6) + 1;
+          btn.textContent = diceUnicode(roll);
+        }, delay);
+      } */
     }
-  }
 
     function diceUnicode(n) {
       return ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'][n - 1];
