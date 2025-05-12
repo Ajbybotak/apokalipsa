@@ -718,6 +718,7 @@
     click.load();
     click.preload = 'auto';
     click.autoplay = true;
+    click.volume = 0.8;
     sound.loop = true; // opcjonalnie – jeśli chcesz pętlę
     let zombieDiv = document.createElement('div');
     let buttonFirstDiv = document.createElement('div');
@@ -1223,6 +1224,11 @@
             document.querySelector('.crown-icon').style.backgroundImage = `url('bluecrown.png')`;
           } else {
             document.querySelector('.crown-icon').style.backgroundImage = `url('redcrown.png')`;
+            if (code === 'noclick') {
+              click.volume = 0;
+            } else {
+              click.volume = 0.8;
+            }
           }
         }
         output.textContent = 'Nieprawidłowy kod';
