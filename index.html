@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -1139,6 +1139,12 @@
       console.log(Number(document.getElementById('zycie').textContent));
       console.log(Number(document.getElementById('doswiadczenie').textContent));
       console.log(Number(document.getElementById('zwyciestwo').textContent));
+
+      localStorage.setItem('bro', document.getElementById('bron').textContent);
+      localStorage.setItem('glo', document.getElementById('glod').textContent);
+      localStorage.setItem('zyc', document.getElementById('zycie').textContent);
+      localStorage.setItem('dos', document.getElementById('doswiadczenie').textContent);
+      localStorage.setItem('zwy', document.getElementById('zwyciestwo').textContent);
     }
 
     function checkCode() {
@@ -1189,6 +1195,12 @@
     window.onload = () => {
       const diceBtn = document.getElementById('dice-btn');
       diceBtn.textContent = diceUnicode(Math.floor(Math.random() * 6) + 1);
+
+      document.getElementById('bron').textContent = localStorage.getItem('bro');
+      document.getElementById('glod').textContent = localStorage.getItem('glo');
+      document.getElementById('zycie').textContent = localStorage.getItem('zyc');
+      document.getElementById('doswiadczenie').textContent = localStorage.getItem('dos');
+      document.getElementById('zwyciestwo').textContent = localStorage.getItem('zwy');
     }
   </script>
 </head>
