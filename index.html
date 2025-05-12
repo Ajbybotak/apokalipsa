@@ -22,7 +22,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -1098,6 +1098,17 @@
       let value = parseInt(valueElem.textContent);
       value = Math.max(min, Math.min(max, value + delta));
       valueElem.textContent = value;
+      storageCheck();
+    }
+
+    function storageCheck() {
+      if(localStorage.getItem('bro') == document.getElementById('bron').textContent && localStorage.getItem('glo') == document.getElementById('glod').textContent && localStorage.getItem('zyc') == document.getElementById('zycie').textContent && localStorage.getItem('dos') == document.getElementById('doswiadczenie').textContent && localStorage.getItem('zwy') == document.getElementById('zwyciestwo').textContent) {
+        //pokaż book.png
+        console.log('wartosci rowne zapisanym');
+      } else {
+        //pokaż book2.png
+        console.log('wartosci rozne zapisanym');
+      }
     }
 
     function resetValues() {
@@ -1150,6 +1161,7 @@
       console.log(localStorage.getItem('zyc'));
       console.log(localStorage.getItem('dos'));
       console.log(localStorage.getItem('zwy'));
+      storageCheck();
     }
 
     function checkCode() {
