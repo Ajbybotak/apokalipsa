@@ -27,7 +27,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -565,7 +565,7 @@
     .plus-text {
       font-size: 70px !important;
       /* font-weight: bold; */
-      transform: translateY(-100px);
+      transform: translateY(-110px);
       text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;
       color: white;
       position: relative;
@@ -1365,121 +1365,81 @@
     }
 
     function rollDice(btn) {
-      let roll = Math.floor(Math.random() * 6) + 1;
-      let newRoll = roll;
+  
       /*click.currentTime = 0;
       click.play();*/
       diceSound.volume = vol2;
       diceSound.currentTime = 0;
       diceSound.play();
       
-      setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-
-        btn.textContent = diceUnicode(newRoll);
-      }, 67)
-
-      setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-
-        btn.textContent = diceUnicode(newRoll);
-      }, 133)
+      function getNewRoll(prevRoll) {
+        let newRoll;
+        do {
+          newRoll = Math.floor(Math.random() * 6) + 1;
+        } while (newRoll === prevRoll); // Generuje nową liczbę dopóki nie będzie różna od poprzedniej
+        return newRoll;
+      }
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 233)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 67);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 333)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 133);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 467)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 233);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 633)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 333);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 800)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 467);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 933)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 633);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 1133)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 800);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 1467)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 933);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
-
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 2133)
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 1133);
 
       setTimeout(() => {
-        roll = Math.floor(Math.random() * 6) + 1;
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 1467);
 
-        newRoll = roll;
-        while (newRoll === roll) newRoll = Math.floor(Math.random() * 6) + 1;
-              
-        btn.textContent = diceUnicode(newRoll);
-      }, 2833)
+      setTimeout(() => {
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 2133);
+
+      setTimeout(() => {
+        roll = getNewRoll(roll);
+        btn.textContent = diceUnicode(roll);
+      }, 2833);
+
       
       /*let rolls = 15;
       let baseDelay = 50;
