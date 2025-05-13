@@ -27,7 +27,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -775,17 +775,19 @@
     //document.body.appendChild(zombieDiv);
 
     function playRandomZombieSound() {
-      // Tworzymy nowy obiekt Audio
-      const zombieSound = new Audio(`zombie${Math.floor(Math.random() * 15) + 1}.mp3`);
+      if (zombieEasterEgg === 0) {
+        // Tworzymy nowy obiekt Audio
+        const zombieSound = new Audio(`zombie${Math.floor(Math.random() * 15) + 1}.mp3`);
 
-      zombieSound.load();
-      zombieSound.preload = 'auto';
-      zombieSound.autoplay = true;
-      zombieSound.volume = vol;
-      zombieSound.currentTime = 0;
-     
-      // Odtwarzamy dźwięk
-      zombieSound.play();
+        zombieSound.load();
+        zombieSound.preload = 'auto';
+        zombieSound.autoplay = true;
+        zombieSound.volume = vol;
+        zombieSound.currentTime = 0;
+      
+        // Odtwarzamy dźwięk
+        zombieSound.play();
+      }
     } 
 
     function playRandomCoinSound() {
@@ -910,10 +912,11 @@
         console.log(1);
         
         let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
-        let randomImage = zombieImages[Math.floor(Math.random() * zombieImages.length)];
+        if (zombieEasterEgg === 0) {
+          let randomImage = zombieImages[Math.floor(Math.random() * zombieImages.length)];
         
-        zombieDiv.style.backgroundImage = `url('${randomImage}')`;
-        
+          zombieDiv.style.backgroundImage = `url('${randomImage}')`;
+        }
         document.body.appendChild(zombieDiv);
         document.body.appendChild(buttonFirstDiv);
         document.body.appendChild(buttonSecondDiv);
@@ -1321,6 +1324,9 @@
                         zombieDiv.style.backgroundImage = `url('shrek.png')`;
                         return;
                       } else {
+                        let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
+                        let randomImage = zombieImages[Math.floor(Math.random() * zombieImages.length)];
+                        zombieDiv.style.backgroundImage = `url('${randomImage}')`;
                         zombieEasterEgg = 0;
 
                       }
