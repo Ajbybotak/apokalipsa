@@ -27,7 +27,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -1240,6 +1240,7 @@
     }
 
     function smierc() {
+      const msg = document.getElementById('death-message');
       msg.style.display = 'block';
       msg.style.transform = 'translateY(-50px)';
       if (parseInt(document.getElementById('zwyciestwo').textContent) > 0) {
@@ -1251,7 +1252,6 @@
         click.currentTime = 0;
         click.play();
 
-        const msg = document.getElementById('death-message');
         let seconds = 10;
 
         msg.style.color = 'black';
