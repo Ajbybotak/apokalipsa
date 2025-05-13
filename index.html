@@ -27,7 +27,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -1240,7 +1240,9 @@
     }
 
     function smierc() {
-      if (document.getElementById('zwyciestwo').textContent == 0) {
+      msg.style.display = 'block';
+      msg.style.transform = 'translateY(-50px)';
+      if (document.getElementById('zwyciestwo').textContent > 0) {
         const getRandom = () => Math.floor(Math.random() * 5 + 1) * 2;
         document.getElementById('glod').textContent = getRandom();
         document.getElementById('zycie').textContent = getRandom();
@@ -1252,14 +1254,12 @@
         const msg = document.getElementById('death-message');
         let seconds = 10;
 
-        msg.style.display = 'block';
-        msg.style.transform = 'translateY(-50px)';
+        msg.style.color = 'black';
         msg.textContent = 'Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (ten napis zniknie za 10)';
         
         const interval = setInterval(() => {
           seconds--;
           if (seconds > 0) {
-            msg.style.color = 'black';
             msg.textContent = `Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (ten napis zniknie za ${seconds})`;
           } else {
             msg.style.display = 'none';
