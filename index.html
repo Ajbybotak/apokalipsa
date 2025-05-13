@@ -27,7 +27,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -1365,7 +1365,7 @@
     }
 
     function rollDice(btn) {
-  
+      let roll = Math.floor(Math.random() * 6) + 1;
       /*click.currentTime = 0;
       click.play();*/
       diceSound.volume = vol2;
