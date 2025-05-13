@@ -27,7 +27,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -1269,30 +1269,36 @@
       console.log(code);
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">KLIKNIJ TUTAJ</a>';
+        return;
       } else {
         if (code === 'BL') {
           chanceGood = 1;
           console.log(chanceGood);
+          return;
         } else {
           chanceGood = 0;
           console.log(chanceGood);
           if (code === 'blue') {
             document.querySelector('.crown-icon').style.backgroundImage = `url('bluecrown.png')`;
+            return;
           } else {
             document.querySelector('.crown-icon').style.backgroundImage = `url('redcrown.png')`;
             if (code === 'mute') {
               click.volume = 0;
               vol = 0;
               vol2 = 0;
+              return;
             } else {
               if (code === 'noclicksounds') {
                 click.volume = 0;
                 vol2 = 0;
+                return;
               } else {
                 click.volume = 0.8;
                 vol2 = 0.8;
                 if (code === 'nozombiesounds') {
                   vol = 0;
+                  return;
                 } else {
                   vol = 1;
                 
@@ -1302,7 +1308,8 @@
           }
         }
       }
-        output.textContent = 'Nieprawidłowy kod';
+      output.textContent = 'Nieprawidłowy kod';
+      return;
     }
 
     function rollDice(btn) {
