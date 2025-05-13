@@ -27,7 +27,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid blue;
+      outline: 2px solid red;
     }
     .top-buttons {
       display: flex;
@@ -713,6 +713,7 @@
   </style>
   <script>
     
+    let zombieEasterEgg = 0;
     let count = 0;
     let countEvent = 0;
     let chanceGood = 0;
@@ -888,13 +889,15 @@
     }
 
     function changeZombieSkin() {
-      playRandomZombieSound();
-      zombieShake();
-      setTimeout(() => {
-        let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
-        let randomImage = zombieImages[Math.floor(Math.random() * zombieImages.length)];
-        zombieDiv.style.backgroundImage = `url('${randomImage}')`;
-      }, 1100);
+      if (zombieEasterEgg === 0) {
+        playRandomZombieSound();
+        zombieShake();
+        setTimeout(() => {
+          let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
+          let randomImage = zombieImages[Math.floor(Math.random() * zombieImages.length)];
+          zombieDiv.style.backgroundImage = `url('${randomImage}')`;
+        }, 1100);
+      }
     }
 
 
@@ -1005,40 +1008,42 @@
     }
 
     function zombieShake() {
-      //const zombie = document.querySelector('.zombie');
-      console.log('zombieShake start');
-      //if (!zombie) return;
+      if (zombieEasterEgg === 0) {
+        //const zombie = document.querySelector('.zombie');
+        console.log('zombieShake start');
+        //if (!zombie) return;
 
-      let intensity = 1;
-      let growing = true;
+        let intensity = 1;
+        let growing = true;
 
-      const shakeInterval = setInterval(() => {
-        // Wygeneruj losowe przesunięcia
-        const x = (Math.random() - 0.5) * intensity * 2 - 40;
-        const y = (Math.random() - 0.5) * intensity - 45;
+        const shakeInterval = setInterval(() => {
+          // Wygeneruj losowe przesunięcia
+          const x = (Math.random() - 0.5) * intensity * 2 - 40;
+          const y = (Math.random() - 0.5) * intensity - 45;
 
-        zombieDiv.classList.remove('show');
-        zombieDiv.style.right = `${x}px`;
-        zombieDiv.style.bottom = `${y}px`;
+          zombieDiv.classList.remove('show');
+          zombieDiv.style.right = `${x}px`;
+          zombieDiv.style.bottom = `${y}px`;
 
-        //zombie.style.transform = `translateX(${x}px)`;
-        //zombie.style.transform = `translateY(${y}px)`;
-      
-        // Zwiększ lub zmniejsz intensywność
-        if (growing) {
-          intensity += 0.5;
-          if (intensity >= 12) growing = false; // osiągnęliśmy maksimum
-        } else {
-          intensity -= 0.5;
-          if (intensity <= 0) {
-            clearInterval(shakeInterval);
-            //zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
-            zombieDiv.style.bottom = '-45px';
-            zombieDiv.style.right = '-40px';
-            console.log('zombieShake done');
+          //zombie.style.transform = `translateX(${x}px)`;
+          //zombie.style.transform = `translateY(${y}px)`;
+        
+          // Zwiększ lub zmniejsz intensywność
+          if (growing) {
+            intensity += 0.5;
+            if (intensity >= 12) growing = false; // osiągnęliśmy maksimum
+          } else {
+            intensity -= 0.5;
+            if (intensity <= 0) {
+              clearInterval(shakeInterval);
+              //zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
+              zombieDiv.style.bottom = '-45px';
+              zombieDiv.style.right = '-40px';
+              console.log('zombieShake done');
+            }
           }
-        }
-      }, 50);
+        }, 50);
+      }
     }
 
     function zombieEvent() {
@@ -1301,7 +1306,26 @@
                   return;
                 } else {
                   vol = 1;
-                
+                  if (code === 'Ajby') {
+                    zombieEasterEgg = 1;
+                    zombieDiv.style.backgroundImage = `url('ajby.png')`;
+                    return;
+                  } else {
+                    if (code === 'Frank') {
+                      zombieEasterEgg = 1;
+                      zombieDiv.style.backgroundImage = `url('frank.png')`;
+                      return;
+                    } else {
+                      if (code === '01.07.2025') {
+                        zombieEasterEgg = 1;
+                        zombieDiv.style.backgroundImage = `url('shrek.png')`;
+                        return;
+                      } else {
+                        zombieEasterEgg = 0;
+
+                      }
+                    }
+                  }
                 }
               }
             }
