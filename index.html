@@ -736,7 +736,7 @@
     let zombieEasterEgg = 0;
     let count = 0;
     let countEvent = 0;
-    let chanceGood = 0;
+    let chanceGood = 0.35;
     let showBonus = false;
     let muted = true;
     let pauseTime = 0; // Zmienna przechowująca czas zatrzymania dźwięku
@@ -929,7 +929,7 @@
       click.play();
 
       if (count % 2 === 1) {
-        console.log(1);
+        //console.log(1);
         
         let zombieImages = ['zombie1.png', 'zombie2.png', 'zombie3.png', 'zombie4.png', 'zombie5.png', 'zombie6.png'];
         if (zombieEasterEgg === 0) {
@@ -967,7 +967,7 @@
           button.addEventListener('click', randomText);
         });
       } else {
-        console.log(0);
+        //console.log(0);
         //po drugim włączeniu - wyłączenie
         let existingButtonEvent = document.querySelector('.buttonEvent');
         zombieDiv.removeEventListener('click', changeZombieSkin);
@@ -975,8 +975,8 @@
           existingButtonEvent.classList.remove('show');
           existingButtonEvent.classList.add('hide');
           countEvent++;
-          console.log(countEvent);
-          console.log('1 miejsce');
+          //console.log(countEvent);
+          //console.log('1 miejsce');
           existingButtonEvent.removeEventListener('click', buttonListener);
           setTimeout(() => {
             existingButtonEvent.style.opacity = 0;
@@ -1033,7 +1033,7 @@
     function zombieShake() {
       if (zombieEasterEgg === 0) {
         //const zombie = document.querySelector('.zombie');
-        console.log('zombieShake start');
+        //console.log('zombieShake start');
         //if (!zombie) return;
 
         let intensity = 1;
@@ -1062,7 +1062,7 @@
               //zombie.style.transform = 'translate(0, 0)'; // wróć do pozycji
               zombieDiv.style.bottom = '-45px';
               zombieDiv.style.right = '-40px';
-              console.log('zombieShake done');
+              //console.log('zombieShake done');
             }
           }
         }, 50);
@@ -1076,8 +1076,8 @@
           button.removeEventListener('click', randomText);
         });
       countEvent++;
-      console.log(countEvent);
-      console.log('2 miejsce');
+      //console.log(countEvent);
+      //console.log('2 miejsce');
 
       document.body.appendChild(buttonEventDiv);
 
@@ -1167,8 +1167,8 @@
           button.addEventListener('click', randomText);
         });
       countEvent++;
-      console.log(countEvent);
-      console.log('3 miejsce');
+      //console.log(countEvent);
+      //console.log('3 miejsce');
       existingButtonEvent.classList.remove('show');
       existingButtonEvent.classList.add('hide');
       
@@ -1240,11 +1240,11 @@
       if(localStorage.getItem('bro') == document.getElementById('bron').textContent && localStorage.getItem('glo') == document.getElementById('glod').textContent && localStorage.getItem('zyc') == document.getElementById('zycie').textContent && localStorage.getItem('dos') == document.getElementById('doswiadczenie').textContent && localStorage.getItem('zwy') == document.getElementById('zwyciestwo').textContent) {
         //pokaż book.png
         document.querySelector('.save-icon').style.backgroundImage = `url('book.png')`;
-        console.log('wartosci rowne zapisanym');
+        //console.log('wartosci rowne zapisanym');
       } else {
         //pokaż book2.png
         document.querySelector('.save-icon').style.backgroundImage = `url('book2.png')`;
-        console.log('wartosci rozne zapisanym');
+        //console.log('wartosci rozne zapisanym');
       }
     }
 
@@ -1298,22 +1298,22 @@
     }
 
     function save() {
-      console.log(Number(document.getElementById('bron').textContent));
-      console.log(Number(document.getElementById('glod').textContent));
-      console.log(Number(document.getElementById('zycie').textContent));
-      console.log(Number(document.getElementById('doswiadczenie').textContent));
-      console.log(Number(document.getElementById('zwyciestwo').textContent));
+      //console.log(Number(document.getElementById('bron').textContent));
+      //console.log(Number(document.getElementById('glod').textContent));
+      //console.log(Number(document.getElementById('zycie').textContent));
+      //console.log(Number(document.getElementById('doswiadczenie').textContent));
+      //console.log(Number(document.getElementById('zwyciestwo').textContent));
 
       localStorage.setItem('bro', document.getElementById('bron').textContent);
       localStorage.setItem('glo', document.getElementById('glod').textContent);
       localStorage.setItem('zyc', document.getElementById('zycie').textContent);
       localStorage.setItem('dos', document.getElementById('doswiadczenie').textContent);
       localStorage.setItem('zwy', document.getElementById('zwyciestwo').textContent);
-      console.log(localStorage.getItem('bro'));
-      console.log(localStorage.getItem('glo'));
-      console.log(localStorage.getItem('zyc'));
-      console.log(localStorage.getItem('dos'));
-      console.log(localStorage.getItem('zwy'));
+      //console.log(localStorage.getItem('bro'));
+      //console.log(localStorage.getItem('glo'));
+      //console.log(localStorage.getItem('zyc'));
+      //console.log(localStorage.getItem('dos'));
+      //console.log(localStorage.getItem('zwy'));
       storageCheck();
       click.currentTime = 0;
       click.play();
@@ -1325,18 +1325,18 @@
       
       const code = codeInputDiv.value;  // Pobieramy wartość z input
       //codeInputDiv.textContent = code;  // Wyświetlamy wartość w div
-      console.log(code);
+      //console.log(code);
       if (code === 'abc') {
         output.innerHTML = 'Gratulacje! Wpisany przez Ciebie kod jest prawidłowy! Dzięki za poświęcony czas, oto obiecany bonusowy film: <a href="https://www.youtube.com/watch?v=SgQPw00wURw" target="_blank">KLIKNIJ TUTAJ</a>';
         return;
       } else {
         if (code === 'BL') {
-          chanceGood = 1;
-          console.log(chanceGood);
+          chanceGood = 0.7;
+          //console.log(chanceGood);
           return;
         } else {
-          chanceGood = 0;
-          console.log(chanceGood);
+          chanceGood = 0.35;
+          //console.log(chanceGood);
           if (code === 'blue') {
             document.querySelector('.crown-icon').style.backgroundImage = `url('bluecrown.png')`;
             return;
@@ -1493,7 +1493,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const diceBtn = document.getElementById('dice-btn');
       diceBtn.textContent = diceUnicode(Math.floor(Math.random() * 6) + 1);
-      console.log('odswiezenie');
+      //console.log('odswiezenie');
       
 
       setTimeout(() => {
@@ -1513,14 +1513,14 @@
         document.getElementById('doswiadczenie').textContent = localStorage.getItem('dos');
         document.getElementById('zwyciestwo').textContent = localStorage.getItem('zwy');
 
-        console.log(localStorage.getItem('bro'));
-        console.log(localStorage.getItem('glo'));
-        console.log(localStorage.getItem('zyc'));
-        console.log(localStorage.getItem('dos'));
-        console.log(localStorage.getItem('zwy'));
+        //console.log(localStorage.getItem('bro'));
+        //console.log(localStorage.getItem('glo'));
+        //console.log(localStorage.getItem('zyc'));
+        //console.log(localStorage.getItem('dos'));
+        //console.log(localStorage.getItem('zwy'));
 
         localStorage.setItem('test', '123');
-        console.log(localStorage.getItem('test'));
+        //console.log(localStorage.getItem('test'));
       }, 100);
     });
   </script>
