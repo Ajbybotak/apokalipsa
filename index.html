@@ -1111,16 +1111,27 @@
     
 
       const possibleTextsEventBad = ['Aktywujący teleportuje się na pole z czerwoną obwódką tego kafelka, na którym stoi.', 
-'Wszyscy teleportują się na pole z czerwoną obwódką tego kafelka na którym stoi aktywujący.', 
-'Aktywujący odbiera nagrodę taką jak za wejście na srebrne pole.', 
-'Wywołaj atak o sile (losowa liczba 1-20).', 
-'Wszyscy gracze -1 punkt życia.', 
-'Wszyscy gracze -(los 1-3) punktów głodu.', 
-'Zamiana punktów broni. Każda osoba ustawia sobie tyle punktów broni ile ma osoba po lewo.', 
-'Rzućcie kostką. Osoba z najniższym wynikiem -1 broni. Jeśli remis to 2 osoby mają -1 broni.', 
-'W następnej turze wszystkie przejścia kosztują 2 razy więcej punktów głodu.', 
-'Każdy gracz traci połowę swoich punktów życia.'];
-      const possibleTextsEventGood = ['dobry1', 'dobry2', 'dobry3', 'dobry4'];
+      'Wszyscy teleportują się na pole z czerwoną obwódką tego kafelka na którym stoi aktywujący.', 
+      'Aktywujący odbiera nagrodę taką jak za wejście na srebrne pole.', 
+      `Aktywującego atakują zombie o sile ${Math.floor(Math.random() * 20) + 1}.`, 
+      'Wszyscy gracze -1 punkt życia.', 
+      `Wszyscy gracze -${Math.floor(Math.random() * 3) + 1} punktów głodu.`, 
+      'Zamiana punktów broni. Każda osoba ustawia sobie tyle punktów broni ile ma osoba po lewo.', 
+      'Rzućcie kostką. Osoba z najniższym wynikiem -1 broni. Jeśli remis to 2 osoby mają -1 broni.', 
+      'W następnej turze wszystkie przejścia kosztują 2 razy więcej punktów głodu.', 
+      'Każdy gracz traci połowę swoich punktów życia.'];
+      const possibleTextsEventGood = ['Aktywujący może wybrać srebrne miejsce, do którego teleportuje się za 2 punkty doświadczenia.', 
+      'Aktywujący rzuca kostką i odbiera nagrodę jak za wejście na złote pole.', 
+      `Aktywujący znajduje ${Math.floor(Math.random() * 3) + 1} punktów doświadczenia.`, 
+      'Aktywujący znajduje dodatkowy punkt życia.', 
+      'Aktywujący losuje wydarzenie z kafelka, na którym stoi.', 
+      'Każdy może wymienić 2 punkty głodu na 1 punkt życia (maksymalnie 2 wymiany).', 
+      'Każdy może wydać całe swoje doświadczenie na dodatkowe 2 punkty życia.', 
+      'W następnej turze wszystkie drogi są za 1 punkt głodu.', 
+      'W następnej turze wszystkie miejsca są wolne od zombie.',
+      `Aktywujący znajduje ${Math.floor(Math.random() * 3) + 1} punktów głodu.`, 
+      'Kto będzie w stanie oddać największą liczbę punktów głodu dostaje 2 dodatkowe punkty broni.',
+      'Każdy kto jest w strefie może przenieść się na dowolne pole w tej strefie.'];
 
       const chance = Math.random();
       //const code = codeInputDiv.value;
