@@ -27,7 +27,7 @@
       transform: translateY(-60px);
       transform: translateX(35px);
       font-size: 40px;
-      outline: 2px solid red;
+      outline: 2px solid blue;
     }
     .top-buttons {
       display: flex;
@@ -565,7 +565,7 @@
     .plus-text {
       font-size: 70px !important;
       /* font-weight: bold; */
-      transform: translateY(-110px);
+      transform: translateY(-120px);
       text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black, -3px 0px 0 black, 3px 0px 0 black, 0px 3px 0 black, 0px -3px 0 black;
       color: white;
       position: relative;
@@ -1261,6 +1261,8 @@
           msg.textContent = `Ustaw punkty broni na numer ostatnio dodanego kafelka planszy. (ten napis zniknie za ${seconds})`;
         } else {
           msg.style.display = 'none';
+          click.currentTime = 0;
+          click.play();
           clearInterval(interval);
         }
       }, 1000);
