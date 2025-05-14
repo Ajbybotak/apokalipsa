@@ -854,14 +854,17 @@
         setTimeout(() => {
           /*codeInputDiv.classList.remove('show2');
           codeInputDiv.classList.add('show');*/
+          document.querySelector('.code-input').style.opacity = 1;
           document.querySelector('.code-input').classList.remove('show2');
           document.querySelector('.code-input').classList.add('show');
 
+          document.querySelector('.code-output').style.opacity = 0;
           document.querySelector('.code-output').classList.remove('show2');
           document.querySelector('.code-output').classList.add('show');
 
           document.querySelector('.bonus-instruction').classList.remove('show2');
           document.querySelector('.bonus-instruction').classList.add('show');
+          document.querySelector('.counters').style.opacity = 0;
         }, 1500)
       } else {
 
