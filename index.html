@@ -857,14 +857,17 @@
           document.querySelector('.code-input').style.opacity = 1;
           document.querySelector('.code-input').classList.remove('show2');
           document.querySelector('.code-input').classList.add('show');
-
-          document.querySelector('.code-output').style.opacity = 0;
+          
+          document.querySelector('.code-output').style.opacity = 1;
           document.querySelector('.code-output').classList.remove('show2');
           document.querySelector('.code-output').classList.add('show');
 
+          document.querySelector('.bonus-instruction').style.opacity = 1;
           document.querySelector('.bonus-instruction').classList.remove('show2');
           document.querySelector('.bonus-instruction').classList.add('show');
+          
           document.querySelector('.counters').style.opacity = 0;
+          document.querySelector('.reset-death-container').style.opacity = 0;
         }, 1500)
       } else {
 
@@ -881,11 +884,17 @@
         document.querySelector('.bonus-instruction').classList.add('show2');
 
         setTimeout(() => {
+          document.querySelector('.counters').style.opacity = 1;
           document.querySelector('.counters').classList.remove('icon-slide-left2');
           document.querySelector('.counters').classList.add('icon-slide-left');
 
+          document.querySelector('.reset-death-container').style.opacity = 1;
           document.querySelector('.reset-death-container').classList.remove('show2');
           document.querySelector('.reset-death-container').classList.add('show');
+
+          document.querySelector('.code-input').style.opacity = 0;
+          document.querySelector('.code-output').style.opacity = 0;
+          document.querySelector('.bonus-instruction').style.opacity = 0;
         }, 1500)
       }
 
