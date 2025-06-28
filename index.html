@@ -1394,7 +1394,12 @@
                           zombieDiv.style.backgroundImage = `url('${randomImage}')`;
                           zombieEasterEgg = 0;
                         }
-
+                        if (code === 'instrukcja') {
+                          const link = document.createElement('a');
+                          link.href = 'instrukcja.pdf'; // Ścieżka do pliku PDF
+                          link.download = 'instrukcja.pdf'; // Nazwa pliku po pobraniu
+                          link.click(); // Symulacja kliknięcia w link
+                        }
                       }
                     }
                   }
