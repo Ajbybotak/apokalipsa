@@ -1518,6 +1518,11 @@
           localStorage.setItem('zyc', '10');
           localStorage.setItem('dos', '0');
           localStorage.setItem('zwy', '3');
+
+          const link = document.createElement('a');
+          link.href = 'instrukcja.pdf'; // Ścieżka do pliku PDF
+          link.download = 'instrukcja.pdf'; // Nazwa pliku po pobraniu
+          link.click(); // Symulacja kliknięcia w link
         }
 
         document.getElementById('bron').textContent = localStorage.getItem('bro');
